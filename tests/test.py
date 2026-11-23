@@ -1,8 +1,11 @@
 import sys, subprocess, time, json
 from playwright.sync_api import sync_playwright
-OUT='/home/claude/cheolttara/screens/'
+import os
+ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUT=os.path.join(ROOT,'screens')+'/'
+os.makedirs(OUT,exist_ok=True)
 BASE='http://localhost:8765/'
-srv=subprocess.Popen(['python3','-m','http.server','8765','-d','/home/claude/cheolttara/app'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+srv=subprocess.Popen(['python3','-m','http.server','8765','-d',ROOT],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
 time.sleep(1)
 results=[]
 def check(name,cond,extra=''):
