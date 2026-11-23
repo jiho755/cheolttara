@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fbf8f3">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>철따라</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-season="spring">
+<header class="topbar">
+  <h1 id="title">철따라</h1>
+  <p id="subtitle"></p>
+</header>
+<main id="view" aria-live="polite"></main>
+<nav class="tabbar" role="tablist" aria-label="하단 메뉴">
+  <button role="tab" data-tab="home" class="tab"><span class="ti">🌿</span><span>이번 철</span></button>
+  <button role="tab" data-tab="bucket" class="tab"><span class="ti">🧺</span><span>버킷리스트</span></button>
+  <button role="tab" data-tab="stamps" class="tab"><span class="ti">💮</span><span>도장판</span></button>
+  <button role="tab" data-tab="alerts" class="tab"><span class="ti">🔔</span><span>알림</span><i id="alertDot" class="dot" hidden></i></button>
+</nav>
+<div id="sheetRoot"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>

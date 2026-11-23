@@ -1,0 +1,1802 @@
+[
+  {
+    "id": "food-watermelon",
+    "name": "수박",
+    "category": "food",
+    "subcategory": "과일",
+    "emoji": "🍉",
+    "start": {
+      "month": 7,
+      "period": "early"
+    },
+    "end": {
+      "month": 8,
+      "period": "late"
+    },
+    "summary": "여름 노지 수박은 7~8월에 가장 달아요",
+    "tip": "냉장고에 살짝 식혀 두었다 먹으면 더 시원해요",
+    "region": "전국"
+  },
+  {
+    "id": "food-chamoe",
+    "name": "참외",
+    "category": "food",
+    "subcategory": "과일",
+    "emoji": "🍈",
+    "start": {
+      "month": 6,
+      "period": "mid"
+    },
+    "end": {
+      "month": 8,
+      "period": "mid"
+    },
+    "summary": "6월 중순부터 여름 끝까지 나오는 달콤한 참외",
+    "tip": "꼭지 쪽이 노랗게 익고 향이 진한 것을 고르세요",
+    "region": "전국"
+  },
+  {
+    "id": "food-peach",
+    "name": "복숭아",
+    "category": "food",
+    "subcategory": "과일",
+    "emoji": "🍑",
+    "start": {
+      "month": 7,
+      "period": "mid"
+    },
+    "end": {
+      "month": 8,
+      "period": "late"
+    },
+    "summary": "부드럽고 즙이 많은 여름 대표 과일",
+    "tip": "손으로 눌러 살짝 말랑한 것이 먹기 좋아요",
+    "region": "전국"
+  },
+  {
+    "id": "food-plum",
+    "name": "자두",
+    "category": "food",
+    "subcategory": "과일",
+    "emoji": "🍒",
+    "start": {
+      "month": 7,
+      "period": "mid"
+    },
+    "end": {
+      "month": 8,
+      "period": "late"
+    },
+    "summary": "7~8월에 새콤달콤하게 익는 여름 과일",
+    "tip": "단단한 것은 실온에 두어 말랑해진 뒤 드세요",
+    "region": "전국"
+  },
+  {
+    "id": "food-apricot",
+    "name": "살구",
+    "category": "food",
+    "subcategory": "과일",
+    "emoji": "🍑",
+    "start": {
+      "month": 6,
+      "period": "mid"
+    },
+    "end": {
+      "month": 7,
+      "period": "early"
+    },
+    "summary": "초여름에 나오는 새콤달콤한 살구",
+    "tip": "잼이나 청으로 만들면 오래 즐길 수 있어요",
+    "region": "전국"
+  },
+  {
+    "id": "food-blueberry",
+    "name": "블루베리",
+    "category": "food",
+    "subcategory": "과일",
+    "emoji": "🫐",
+    "start": {
+      "month": 6,
+      "period": "mid"
+    },
+    "end": {
+      "month": 7,
+      "period": "mid"
+    },
+    "summary": "초여름 노지에서 나는 작고 짙은 열매",
+    "tip": "씻어서 물기를 말려 냉동하면 오래 보관돼요",
+    "region": "전국"
+  },
+  {
+    "id": "food-maesil",
+    "name": "매실",
+    "category": "food",
+    "subcategory": "과일",
+    "emoji": "🍏",
+    "start": {
+      "month": 5,
+      "period": "late"
+    },
+    "end": {
+      "month": 6,
+      "period": "mid"
+    },
+    "summary": "6월에 수확하는 푸른 매실로 청을 담가요",
+    "tip": "수확 후 빨리 손질해야 쉽게 무르지 않아요",
+    "region": "전국"
+  },
+  {
+    "id": "food-grape",
+    "name": "포도",
+    "category": "food",
+    "subcategory": "과일",
+    "emoji": "🍇",
+    "start": {
+      "month": 8,
+      "period": "mid"
+    },
+    "end": {
+      "month": 9,
+      "period": "late"
+    },
+    "summary": "가을 노지 포도는 알이 굵고 단맛이 진해요",
+    "tip": "송이 꼭지가 싱싱하고 알이 단단한 것을 고르세요",
+    "region": "전국"
+  },
+  {
+    "id": "food-pear",
+    "name": "배",
+    "category": "food",
+    "subcategory": "과일",
+    "emoji": "🍐",
+    "start": {
+      "month": 8,
+      "period": "late"
+    },
+    "end": {
+      "month": 10,
+      "period": "late"
+    },
+    "summary": "수분감이 풍부해 가을에 시원하게 먹는 과일",
+    "tip": "차게 식혀 먹으면 아삭한 식감이 살아나요",
+    "region": "전국"
+  },
+  {
+    "id": "food-apple",
+    "name": "사과",
+    "category": "food",
+    "subcategory": "과일",
+    "emoji": "🍎",
+    "start": {
+      "month": 10,
+      "period": "early"
+    },
+    "end": {
+      "month": 11,
+      "period": "late"
+    },
+    "summary": "가을 수확 사과는 아삭하고 새콤달콤해요",
+    "tip": "서늘한 곳에 두면 저장 기간이 길어져요",
+    "region": "전국"
+  },
+  {
+    "id": "food-persimmon",
+    "name": "감",
+    "category": "food",
+    "subcategory": "과일",
+    "emoji": "🟠",
+    "start": {
+      "month": 10,
+      "period": "mid"
+    },
+    "end": {
+      "month": 11,
+      "period": "late"
+    },
+    "summary": "가을 끝자락 단감과 떫은감이 익어 가요",
+    "tip": "홍시는 살짝 눌러 말랑한 것을 골라 드세요",
+    "region": "전국"
+  },
+  {
+    "id": "food-jujube",
+    "name": "대추",
+    "category": "food",
+    "subcategory": "과일",
+    "emoji": "🟤",
+    "start": {
+      "month": 9,
+      "period": "late"
+    },
+    "end": {
+      "month": 10,
+      "period": "late"
+    },
+    "summary": "가을에 붉게 익은 대추는 말려서 차로 좋아요",
+    "tip": "익은 것을 따서 바로 말려 두면 보관이 쉬워요",
+    "region": "전국"
+  },
+  {
+    "id": "food-tangerine",
+    "name": "귤",
+    "category": "food",
+    "subcategory": "과일",
+    "emoji": "🍊",
+    "start": {
+      "month": 11,
+      "period": "early"
+    },
+    "end": {
+      "month": 2,
+      "period": "late"
+    },
+    "summary": "겨울 제주 노지 귤은 11월부터 나와요",
+    "tip": "껍질이 얇고 들었을 때 묵직한 것이 과즙이 많아요",
+    "region": "전국"
+  },
+  {
+    "id": "food-cheonhyang",
+    "name": "천혜향",
+    "category": "food",
+    "subcategory": "과일",
+    "emoji": "🍊",
+    "start": {
+      "month": 2,
+      "period": "early"
+    },
+    "end": {
+      "month": 3,
+      "period": "late"
+    },
+    "summary": "겨울 끝자락 향이 진한 제주 감귤류예요",
+    "tip": "껍질이 얇아 손으로 쉽게 까져서 먹기 편해요",
+    "region": "전국"
+  },
+  {
+    "id": "food-strawberry",
+    "name": "딸기",
+    "category": "food",
+    "subcategory": "과일",
+    "emoji": "🍓",
+    "start": {
+      "month": 12,
+      "period": "early"
+    },
+    "end": {
+      "month": 4,
+      "period": "late"
+    },
+    "summary": "겨울부터 봄까지 가장 달콤한 딸기",
+    "tip": "1~3월 딸기가 당도가 가장 높아요",
+    "region": "전국"
+  },
+  {
+    "id": "food-spinach",
+    "name": "시금치",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🥬",
+    "start": {
+      "month": 11,
+      "period": "early"
+    },
+    "end": {
+      "month": 2,
+      "period": "late"
+    },
+    "summary": "추위를 맞은 겨울 시금치는 달고 진해요",
+    "tip": "뿌리 쪽 붉은 부분까지 살려 데치면 맛이 좋아요",
+    "region": "전국"
+  },
+  {
+    "id": "food-cabbage",
+    "name": "배추",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🥬",
+    "start": {
+      "month": 10,
+      "period": "early"
+    },
+    "end": {
+      "month": 11,
+      "period": "late"
+    },
+    "summary": "가을 노지 배추는 10월 무렵부터 속이 차요",
+    "tip": "겉잎이 짙고 무게감 있는 것이 속이 꽉 찼어요",
+    "region": "전국"
+  },
+  {
+    "id": "food-radish",
+    "name": "무",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🥕",
+    "start": {
+      "month": 10,
+      "period": "early"
+    },
+    "end": {
+      "month": 12,
+      "period": "late"
+    },
+    "summary": "가을에 심어 겨울까지 달고 시원한 뿌리채소",
+    "tip": "잎은 바로 떼어 두어야 수분이 오래 가요",
+    "region": "전국"
+  },
+  {
+    "id": "food-zucchini",
+    "name": "애호박",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🥒",
+    "start": {
+      "month": 7,
+      "period": "early"
+    },
+    "end": {
+      "month": 9,
+      "period": "late"
+    },
+    "summary": "여름 텃밭의 대표 채소, 전과 찌개에 좋아요",
+    "tip": "작고 껍질이 매끈한 것이 연하고 맛이 깔끔해요",
+    "region": "전국"
+  },
+  {
+    "id": "food-cucumber",
+    "name": "오이",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🥒",
+    "start": {
+      "month": 6,
+      "period": "mid"
+    },
+    "end": {
+      "month": 8,
+      "period": "mid"
+    },
+    "summary": "여름 노지 오이는 아삭하고 수분이 많아요",
+    "tip": "가시가 또렷하고 짙푸른 것이 신선해요",
+    "region": "전국"
+  },
+  {
+    "id": "food-eggplant",
+    "name": "가지",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🍆",
+    "start": {
+      "month": 7,
+      "period": "early"
+    },
+    "end": {
+      "month": 9,
+      "period": "mid"
+    },
+    "summary": "여름 노지 가지는 부드럽고 진한 맛이 나요",
+    "tip": "기름을 살짝 발라 구우면 식감이 부드러워요",
+    "region": "전국"
+  },
+  {
+    "id": "food-pepper",
+    "name": "고추",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🌶",
+    "start": {
+      "month": 7,
+      "period": "late"
+    },
+    "end": {
+      "month": 10,
+      "period": "late"
+    },
+    "summary": "여름 끝부터 가을까지 나오는 노지 고추",
+    "tip": "말려 두면 겨울 내내 고춧가루로 쓸 수 있어요",
+    "region": "전국"
+  },
+  {
+    "id": "food-tomato",
+    "name": "토마토",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🍅",
+    "start": {
+      "month": 7,
+      "period": "early"
+    },
+    "end": {
+      "month": 8,
+      "period": "late"
+    },
+    "summary": "햇볕 가득 받고 자란 노지 토마토는 달아요",
+    "tip": "꼭지 주변까지 붉게 익은 것을 고르세요",
+    "region": "전국"
+  },
+  {
+    "id": "food-corn",
+    "name": "옥수수",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🌽",
+    "start": {
+      "month": 7,
+      "period": "early"
+    },
+    "end": {
+      "month": 8,
+      "period": "late"
+    },
+    "summary": "여름에 쪄 먹는 옥수수는 단맛이 진해요",
+    "tip": "수염이 갈색이고 알이 촘촘하면 잘 익은 거예요",
+    "region": "전국"
+  },
+  {
+    "id": "food-potato",
+    "name": "감자",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🥔",
+    "start": {
+      "month": 6,
+      "period": "early"
+    },
+    "end": {
+      "month": 7,
+      "period": "late"
+    },
+    "summary": "초여름 햇감자는 껍질이 얇고 포슬해요",
+    "tip": "빛을 피해 서늘하게 두어야 싹이 덜 나요",
+    "region": "전국"
+  },
+  {
+    "id": "food-sweet-potato",
+    "name": "고구마",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🍠",
+    "start": {
+      "month": 9,
+      "period": "late"
+    },
+    "end": {
+      "month": 11,
+      "period": "early"
+    },
+    "summary": "가을 수확 고구마가 달고 포슬해서 좋아요",
+    "tip": "수확 후 며칠 두면 단맛이 더 올라와요",
+    "region": "전국"
+  },
+  {
+    "id": "food-onion",
+    "name": "양파",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🧅",
+    "start": {
+      "month": 5,
+      "period": "late"
+    },
+    "end": {
+      "month": 6,
+      "period": "late"
+    },
+    "summary": "초여름 햇양파는 수분이 많고 단맛이 나요",
+    "tip": "햇양파는 저장이 어려워 빨리 드시는 게 좋아요",
+    "region": "전국"
+  },
+  {
+    "id": "food-garlic",
+    "name": "마늘",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🧄",
+    "start": {
+      "month": 6,
+      "period": "early"
+    },
+    "end": {
+      "month": 6,
+      "period": "late"
+    },
+    "summary": "6월 수확 햇마늘은 알이 굵고 매운맛이 순해요",
+    "tip": "줄기째 나온 햇마늘은 장아찌로 담가 드세요",
+    "region": "전국"
+  },
+  {
+    "id": "food-aralia",
+    "name": "두릅",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🌿",
+    "start": {
+      "month": 4,
+      "period": "mid"
+    },
+    "end": {
+      "month": 5,
+      "period": "early"
+    },
+    "summary": "봄 나무순의 대표, 쌉싸름하고 향이 진해요",
+    "tip": "데친 뒤 찬물에 헹구면 색이 곱게 유지돼요",
+    "region": "전국"
+  },
+  {
+    "id": "food-bracken",
+    "name": "고사리",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🌿",
+    "start": {
+      "month": 4,
+      "period": "mid"
+    },
+    "end": {
+      "month": 5,
+      "period": "late"
+    },
+    "summary": "봄 산에서 나는 나물, 쌉싸름하고 쫄깃해요",
+    "tip": "삶아서 우린 뒤 바로 무치면 맛이 좋아요",
+    "region": "전국"
+  },
+  {
+    "id": "food-shepherds-purse",
+    "name": "냉이",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🌱",
+    "start": {
+      "month": 3,
+      "period": "early"
+    },
+    "end": {
+      "month": 4,
+      "period": "early"
+    },
+    "summary": "봄 들판에 가장 먼저 나는 향긋한 나물",
+    "tip": "뿌리까지 깨끗이 씻어 된장국에 넣어 보세요",
+    "region": "전국"
+  },
+  {
+    "id": "food-wild-chive",
+    "name": "달래",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🌱",
+    "start": {
+      "month": 3,
+      "period": "early"
+    },
+    "end": {
+      "month": 4,
+      "period": "mid"
+    },
+    "summary": "봄철 알싸한 향이 나는 들나물",
+    "tip": "달래간장이나 무침으로 만들면 향이 살아요",
+    "region": "전국"
+  },
+  {
+    "id": "food-water-dropwort",
+    "name": "미나리",
+    "category": "food",
+    "subcategory": "채소",
+    "emoji": "🌿",
+    "start": {
+      "month": 3,
+      "period": "early"
+    },
+    "end": {
+      "month": 4,
+      "period": "late"
+    },
+    "summary": "봄 물가에서 자라 향이 진한 나물",
+    "tip": "줄기가 연하고 굵기가 고른 것이 식감이 좋아요",
+    "region": "전국"
+  },
+  {
+    "id": "food-gizzard-shad",
+    "name": "전어",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🐟",
+    "start": {
+      "month": 9,
+      "period": "early"
+    },
+    "end": {
+      "month": 10,
+      "period": "late"
+    },
+    "summary": "가을 고소한 생선, 뼈째 먹는 게 특징이에요",
+    "tip": "소금만 뿌려 구우면 고소함이 가장 잘 살아요",
+    "region": "전국"
+  },
+  {
+    "id": "food-mackerel",
+    "name": "고등어",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🐟",
+    "start": {
+      "month": 9,
+      "period": "early"
+    },
+    "end": {
+      "month": 11,
+      "period": "late"
+    },
+    "summary": "가을 고등어는 살이 기름져 고소해요",
+    "tip": "무와 함께 조리하면 비린내가 줄어들어요",
+    "region": "전국"
+  },
+  {
+    "id": "food-blue-crab",
+    "name": "꽃게",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🦀",
+    "start": {
+      "month": 9,
+      "period": "early"
+    },
+    "end": {
+      "month": 11,
+      "period": "late"
+    },
+    "summary": "가을 꽃게는 살이 차고 단맛이 나요",
+    "tip": "찔 때 생강을 넣으면 비린내를 잡을 수 있어요",
+    "region": "전국"
+  },
+  {
+    "id": "food-squid",
+    "name": "오징어",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🦑",
+    "start": {
+      "month": 9,
+      "period": "early"
+    },
+    "end": {
+      "month": 11,
+      "period": "late"
+    },
+    "summary": "가을 동해 오징어는 살이 쫄깃하고 달아요",
+    "tip": "살이 투명하고 탄력 있는 것이 신선해요",
+    "region": "전국"
+  },
+  {
+    "id": "food-hairtail",
+    "name": "갈치",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🐟",
+    "start": {
+      "month": 9,
+      "period": "early"
+    },
+    "end": {
+      "month": 11,
+      "period": "mid"
+    },
+    "summary": "가을에 살이 오른 갈치는 기름기가 많아요",
+    "tip": "구이 때 굵은 소금을 뿌리면 살이 단단해져요",
+    "region": "전국"
+  },
+  {
+    "id": "food-oyster",
+    "name": "굴",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🦪",
+    "start": {
+      "month": 11,
+      "period": "early"
+    },
+    "end": {
+      "month": 2,
+      "period": "late"
+    },
+    "summary": "겨울 바다의 대표 해산물, 살이 통통해요",
+    "tip": "껍질이 꽉 닫혀 있고 물이 맑은 것을 고르세요",
+    "region": "전국"
+  },
+  {
+    "id": "food-ark-shell",
+    "name": "꼬막",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🐚",
+    "start": {
+      "month": 11,
+      "period": "early"
+    },
+    "end": {
+      "month": 2,
+      "period": "late"
+    },
+    "summary": "겨울 꼬막은 쫄깃하고 감칠맛이 좋아요",
+    "tip": "삶을 때 입이 벌어진 것부터 골라내면 편해요",
+    "region": "전국"
+  },
+  {
+    "id": "food-spring-flounder",
+    "name": "도다리",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🐟",
+    "start": {
+      "month": 3,
+      "period": "early"
+    },
+    "end": {
+      "month": 4,
+      "period": "late"
+    },
+    "summary": "봄 도다리는 담백하고 쫄깃한 횟감이에요",
+    "tip": "쑥을 넣은 도다리쑥국으로 봄을 맛보세요",
+    "region": "전국"
+  },
+  {
+    "id": "food-webfoot-octopus",
+    "name": "주꾸미",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🐙",
+    "start": {
+      "month": 3,
+      "period": "early"
+    },
+    "end": {
+      "month": 4,
+      "period": "late"
+    },
+    "summary": "봄 주꾸미는 알이 차올라 고소해요",
+    "tip": "데칠 때 식초를 조금 넣으면 색이 선명해요",
+    "region": "전국"
+  },
+  {
+    "id": "food-yellow-croaker",
+    "name": "조기",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🐟",
+    "start": {
+      "month": 4,
+      "period": "early"
+    },
+    "end": {
+      "month": 5,
+      "period": "late"
+    },
+    "summary": "곡우 무렵 알이 차오른 봄 참조기가 제맛이에요",
+    "tip": "가볍게 소금 간해 구우면 담백하게 즐길 수 있어요",
+    "region": "전국"
+  },
+  {
+    "id": "food-conger-eel",
+    "name": "아나고",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🐟",
+    "start": {
+      "month": 6,
+      "period": "early"
+    },
+    "end": {
+      "month": 8,
+      "period": "late"
+    },
+    "summary": "여름 보양식으로 찾는 붕장어예요",
+    "tip": "구이나 탕으로 드시면 기름진 맛이 잘 어울려요",
+    "region": "전국"
+  },
+  {
+    "id": "food-meagre",
+    "name": "민어",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🐟",
+    "start": {
+      "month": 7,
+      "period": "early"
+    },
+    "end": {
+      "month": 8,
+      "period": "late"
+    },
+    "summary": "여름 보양식으로 꼽는 담백한 흰살생선이에요",
+    "tip": "찜이나 탕으로 드시면 국물 맛이 깊어요",
+    "region": "전국"
+  },
+  {
+    "id": "food-pufferfish",
+    "name": "복어",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🐡",
+    "start": {
+      "month": 12,
+      "period": "early"
+    },
+    "end": {
+      "month": 2,
+      "period": "late"
+    },
+    "summary": "겨울 복어는 살이 쫄깃하고 담백해요",
+    "tip": "전문 취급점에서 드셔야 안전해요",
+    "region": "전국"
+  },
+  {
+    "id": "food-yellowtail",
+    "name": "방어",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🐟",
+    "start": {
+      "month": 12,
+      "period": "early"
+    },
+    "end": {
+      "month": 1,
+      "period": "late"
+    },
+    "summary": "겨울 방어는 기름기가 올라 고소해요",
+    "tip": "회는 얇게 썰어 차게 드시면 식감이 좋아요",
+    "region": "전국"
+  },
+  {
+    "id": "food-cod",
+    "name": "대구",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🐟",
+    "start": {
+      "month": 12,
+      "period": "early"
+    },
+    "end": {
+      "month": 2,
+      "period": "late"
+    },
+    "summary": "겨울 대구는 살이 부드럽고 담백해요",
+    "tip": "탕이나 찜으로 해 드시면 살이 잘 풀려요",
+    "region": "전국"
+  },
+  {
+    "id": "food-hanchi",
+    "name": "한치",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🦑",
+    "start": {
+      "month": 6,
+      "period": "early"
+    },
+    "end": {
+      "month": 8,
+      "period": "late"
+    },
+    "summary": "여름 제주 바다에서 나는 작은 오징어예요",
+    "tip": "회나 데침으로 드시면 달큰한 맛이 살아요",
+    "region": "전국"
+  },
+  {
+    "id": "food-doroumuk",
+    "name": "도루묵",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🐟",
+    "start": {
+      "month": 11,
+      "period": "early"
+    },
+    "end": {
+      "month": 12,
+      "period": "late"
+    },
+    "summary": "가을 끝자락 도루묵은 알이 꽉 차요",
+    "tip": "구이나 조림으로 드시면 맛이 깊어요",
+    "region": "전국"
+  },
+  {
+    "id": "food-gwamegi",
+    "name": "과메기",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🐟",
+    "start": {
+      "month": 11,
+      "period": "mid"
+    },
+    "end": {
+      "month": 2,
+      "period": "late"
+    },
+    "summary": "찬 바닷바람에 말린 꽁치, 겨울 별미예요",
+    "tip": "김·미역·쪽파와 함께 쌈 싸 먹어 보세요",
+    "region": "전국"
+  },
+  {
+    "id": "food-cockle",
+    "name": "새조개",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🐚",
+    "start": {
+      "month": 12,
+      "period": "early"
+    },
+    "end": {
+      "month": 3,
+      "period": "mid"
+    },
+    "summary": "겨울에만 맛볼 수 있는 달큰한 조개",
+    "tip": "샤부샤부로 살짝 데쳐 먹으면 단맛이 살아요",
+    "region": "전국"
+  },
+  {
+    "id": "food-red-seabream",
+    "name": "참돔",
+    "category": "food",
+    "subcategory": "수산물",
+    "emoji": "🐠",
+    "start": {
+      "month": 3,
+      "period": "early"
+    },
+    "end": {
+      "month": 4,
+      "period": "late"
+    },
+    "summary": "봄 참돔은 살이 단단하고 맛이 깔끔해요",
+    "tip": "회로 드실 땐 얇게 저며 드시면 좋아요",
+    "region": "전국"
+  },
+  {
+    "id": "food-laver",
+    "name": "김",
+    "category": "food",
+    "subcategory": "해조류",
+    "emoji": "🍃",
+    "start": {
+      "month": 11,
+      "period": "early"
+    },
+    "end": {
+      "month": 3,
+      "period": "late"
+    },
+    "summary": "겨울 바다에서 자라 고소한 향이 나는 김",
+    "tip": "살짝 구우면 향이 살아나 바로 드시기 좋아요",
+    "region": "전국"
+  },
+  {
+    "id": "food-wakame",
+    "name": "미역",
+    "category": "food",
+    "subcategory": "해조류",
+    "emoji": "🌊",
+    "start": {
+      "month": 12,
+      "period": "early"
+    },
+    "end": {
+      "month": 3,
+      "period": "mid"
+    },
+    "summary": "겨울부터 봄까지 나와 미역국으로 끓여요",
+    "tip": "마른 미역은 충분히 불려 써야 부드러워요",
+    "region": "전국"
+  },
+  {
+    "id": "food-kelp",
+    "name": "다시마",
+    "category": "food",
+    "subcategory": "해조류",
+    "emoji": "🌊",
+    "start": {
+      "month": 6,
+      "period": "early"
+    },
+    "end": {
+      "month": 7,
+      "period": "late"
+    },
+    "summary": "여름 바다에서 자라 국물 맛을 내는 해조",
+    "tip": "찬물에 천천히 우려내면 깔끔한 감칠맛이 나요",
+    "region": "전국"
+  },
+  {
+    "id": "food-hijiki",
+    "name": "톳",
+    "category": "food",
+    "subcategory": "해조류",
+    "emoji": "🌿",
+    "start": {
+      "month": 3,
+      "period": "early"
+    },
+    "end": {
+      "month": 4,
+      "period": "late"
+    },
+    "summary": "봄 바다에서 나는 알갱이 식감의 해조",
+    "tip": "데친 뒤 초장에 무치면 식감이 살아나요",
+    "region": "전국"
+  },
+  {
+    "id": "food-chestnut",
+    "name": "밤",
+    "category": "food",
+    "subcategory": "곡물·견과",
+    "emoji": "🌰",
+    "start": {
+      "month": 9,
+      "period": "early"
+    },
+    "end": {
+      "month": 10,
+      "period": "late"
+    },
+    "summary": "가을에 수확하는 밤은 달고 포슬해요",
+    "tip": "칼집을 내고 삶으면 껍질이 쉽게 벗겨져요",
+    "region": "전국"
+  },
+  {
+    "id": "food-ginkgo-nut",
+    "name": "은행",
+    "category": "food",
+    "subcategory": "곡물·견과",
+    "emoji": "🌰",
+    "start": {
+      "month": 10,
+      "period": "mid"
+    },
+    "end": {
+      "month": 11,
+      "period": "mid"
+    },
+    "summary": "가을 은행은 쫀득하고 독특한 향이 나요",
+    "tip": "생은행은 많이 먹지 말고 익혀 드세요",
+    "region": "전국"
+  },
+  {
+    "id": "food-new-rice",
+    "name": "햅쌀",
+    "category": "food",
+    "subcategory": "곡물·견과",
+    "emoji": "🌾",
+    "start": {
+      "month": 9,
+      "period": "late"
+    },
+    "end": {
+      "month": 10,
+      "period": "late"
+    },
+    "summary": "가을걷이 한 햅쌀은 윤기가 흐르고 향이 좋아요",
+    "tip": "햅쌀은 물을 조금 적게 잡으면 밥이 쫀득해요",
+    "region": "전국"
+  },
+  {
+    "id": "nature-cherry-blossom",
+    "name": "벚꽃",
+    "category": "nature",
+    "subcategory": "꽃",
+    "emoji": "🌸",
+    "start": {
+      "month": 3,
+      "period": "late"
+    },
+    "end": {
+      "month": 4,
+      "period": "mid"
+    },
+    "summary": "봄을 대표하는 꽃, 중부는 3월 말~4월 초 절정",
+    "tip": "꽃비 내리기 전 낮 산책이 좋아요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-plum-blossom",
+    "name": "매화",
+    "category": "nature",
+    "subcategory": "꽃",
+    "emoji": "🌸",
+    "start": {
+      "month": 3,
+      "period": "early"
+    },
+    "end": {
+      "month": 3,
+      "period": "late"
+    },
+    "summary": "이른 봄 가장 먼저 피는 향기로운 꽃",
+    "tip": "추운 날씨에도 향기가 진해 이른 산책에 좋아요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-forsythia",
+    "name": "개나리",
+    "category": "nature",
+    "subcategory": "꽃",
+    "emoji": "🌼",
+    "start": {
+      "month": 3,
+      "period": "mid"
+    },
+    "end": {
+      "month": 4,
+      "period": "early"
+    },
+    "summary": "담장과 산기슭을 노랗게 물들이는 봄꽃",
+    "tip": "진달래와 함께 피는 시기에 산책하면 좋아요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-azalea",
+    "name": "진달래",
+    "category": "nature",
+    "subcategory": "꽃",
+    "emoji": "🌸",
+    "start": {
+      "month": 3,
+      "period": "late"
+    },
+    "end": {
+      "month": 4,
+      "period": "mid"
+    },
+    "summary": "연분홍 꽃이 산을 물들이는 봄꽃",
+    "tip": "꽃잎으로 화전을 만들어 먹기도 해요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-magnolia",
+    "name": "목련",
+    "category": "nature",
+    "subcategory": "꽃",
+    "emoji": "🌷",
+    "start": {
+      "month": 3,
+      "period": "late"
+    },
+    "end": {
+      "month": 4,
+      "period": "early"
+    },
+    "summary": "커다란 흰 꽃이 봄 초입을 알리는 나무",
+    "tip": "아침 햇살 아래서 보면 꽃빛이 가장 고와요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-rhododendron",
+    "name": "철쭉",
+    "category": "nature",
+    "subcategory": "꽃",
+    "emoji": "🌺",
+    "start": {
+      "month": 4,
+      "period": "late"
+    },
+    "end": {
+      "month": 5,
+      "period": "mid"
+    },
+    "summary": "진분홍 꽃이 산 능선을 덮는 늦봄 꽃",
+    "tip": "산행 중 능선에서 보면 풍경이 시원해요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-hydrangea",
+    "name": "수국",
+    "category": "nature",
+    "subcategory": "꽃",
+    "emoji": "🌸",
+    "start": {
+      "month": 6,
+      "period": "mid"
+    },
+    "end": {
+      "month": 7,
+      "period": "mid"
+    },
+    "summary": "비 많은 장마철 탐스럽게 피는 꽃",
+    "tip": "흙 성분에 따라 꽃색이 달라지는 것도 재미있어요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-rose",
+    "name": "장미",
+    "category": "nature",
+    "subcategory": "꽃",
+    "emoji": "🌹",
+    "start": {
+      "month": 5,
+      "period": "mid"
+    },
+    "end": {
+      "month": 6,
+      "period": "mid"
+    },
+    "summary": "초여름 정원과 담장을 장식하는 꽃",
+    "tip": "아침 일찍 가면 꽃잎이 싱싱해 사진이 잘 나와요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-sunflower",
+    "name": "해바라기",
+    "category": "nature",
+    "subcategory": "꽃",
+    "emoji": "🌻",
+    "start": {
+      "month": 7,
+      "period": "late"
+    },
+    "end": {
+      "month": 8,
+      "period": "late"
+    },
+    "summary": "여름 끝 태양을 향해 피는 커다란 꽃",
+    "tip": "키 큰 해바라기 사이를 걸으면 사진 명소예요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-cosmos",
+    "name": "코스모스",
+    "category": "nature",
+    "subcategory": "꽃",
+    "emoji": "🌸",
+    "start": {
+      "month": 9,
+      "period": "early"
+    },
+    "end": {
+      "month": 10,
+      "period": "mid"
+    },
+    "summary": "가을 들판과 길가를 하늘하늘 채우는 꽃",
+    "tip": "바람 부는 날 꽃길 산책이 특히 좋아요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-lotus",
+    "name": "연꽃",
+    "category": "nature",
+    "subcategory": "꽃",
+    "emoji": "🌸",
+    "start": {
+      "month": 7,
+      "period": "mid"
+    },
+    "end": {
+      "month": 8,
+      "period": "late"
+    },
+    "summary": "진흙 속에서 피어나는 여름 연못의 꽃",
+    "tip": "새벽에 가면 활짝 핀 연꽃을 볼 수 있어요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-chrysanthemum",
+    "name": "국화",
+    "category": "nature",
+    "subcategory": "꽃",
+    "emoji": "🌼",
+    "start": {
+      "month": 10,
+      "period": "mid"
+    },
+    "end": {
+      "month": 11,
+      "period": "early"
+    },
+    "summary": "늦가을 향긋하게 피는 꽃, 국화차로도 마셔요",
+    "tip": "국화차를 우려 마시면 가을 향이 진해요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-snowdrop",
+    "name": "복수초",
+    "category": "nature",
+    "subcategory": "꽃",
+    "emoji": "🌼",
+    "start": {
+      "month": 2,
+      "period": "mid"
+    },
+    "end": {
+      "month": 3,
+      "period": "early"
+    },
+    "summary": "눈 속에서 가장 먼저 노랗게 피는 꽃",
+    "tip": "볕이 드는 낮 시간에 활짝 피어 찾기 쉬워요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-mugunghwa",
+    "name": "무궁화",
+    "category": "nature",
+    "subcategory": "꽃",
+    "emoji": "🌺",
+    "start": {
+      "month": 7,
+      "period": "early"
+    },
+    "end": {
+      "month": 9,
+      "period": "late"
+    },
+    "summary": "여름부터 가을까지 오래 피는 나라꽃",
+    "tip": "꽃은 아침에 피었다 저녁에 지니 아침에 보세요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-maple-hike",
+    "name": "단풍 산행",
+    "category": "nature",
+    "subcategory": "단풍",
+    "emoji": "🍁",
+    "start": {
+      "month": 10,
+      "period": "mid"
+    },
+    "end": {
+      "month": 11,
+      "period": "early"
+    },
+    "summary": "중부 산에 붉게 물드는 가을 단풍 절정",
+    "tip": "아침 안개 낀 날 산길을 걸으면 운치 있어요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-ginkgo-leaves",
+    "name": "은행나무 단풍",
+    "category": "nature",
+    "subcategory": "단풍",
+    "emoji": "🍂",
+    "start": {
+      "month": 10,
+      "period": "late"
+    },
+    "end": {
+      "month": 11,
+      "period": "mid"
+    },
+    "summary": "노랗게 물든 은행나무가 가을 길을 밝혀요",
+    "tip": "떨어진 은행잎이 쌓인 낙엽길 산책도 좋아요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-ivy-maple",
+    "name": "담쟁이 단풍",
+    "category": "nature",
+    "subcategory": "단풍",
+    "emoji": "🍁",
+    "start": {
+      "month": 10,
+      "period": "late"
+    },
+    "end": {
+      "month": 11,
+      "period": "mid"
+    },
+    "summary": "담벼락을 붉게 타고 오르는 담쟁이 단풍",
+    "tip": "건물 벽을 따라 물든 풍경을 사진으로 남겨보세요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-metasequoia",
+    "name": "메타세쿼이아 단풍",
+    "category": "nature",
+    "subcategory": "단풍",
+    "emoji": "🌲",
+    "start": {
+      "month": 11,
+      "period": "early"
+    },
+    "end": {
+      "month": 11,
+      "period": "late"
+    },
+    "summary": "늦가을 갈색으로 물드는 메타세쿼이아 길",
+    "tip": "단풍이 끝물일 때 마지막으로 가기 좋아요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-silver-grass",
+    "name": "억새밭",
+    "category": "nature",
+    "subcategory": "풍경",
+    "emoji": "🌾",
+    "start": {
+      "month": 9,
+      "period": "late"
+    },
+    "end": {
+      "month": 11,
+      "period": "early"
+    },
+    "summary": "가을 바람에 은빛으로 흔들리는 억새 능선",
+    "tip": "오후 햇살에 은빛이 가장 밝게 반짝여요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-rapeseed",
+    "name": "유채밭",
+    "category": "nature",
+    "subcategory": "풍경",
+    "emoji": "🌼",
+    "start": {
+      "month": 3,
+      "period": "late"
+    },
+    "end": {
+      "month": 4,
+      "period": "mid"
+    },
+    "summary": "노란 유채꽃이 들판을 가득 채우는 봄 풍경",
+    "tip": "바람이 적은 맑은 날 오후에 가면 좋아요",
+    "region": "전국"
+  },
+  {
+    "id": "nature-barley-field",
+    "name": "청보리밭",
+    "category": "nature",
+    "subcategory": "풍경",
+    "emoji": "🌾",
+    "start": {
+      "month": 4,
+      "period": "mid"
+    },
+    "end": {
+      "month": 5,
+      "period": "mid"
+    },
+    "summary": "봄바람에 물결치는 푸른 보리밭",
+    "tip": "바람결을 따라 걸으며 물결을 감상해 보세요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-buckwheat-field",
+    "name": "메밀꽃밭",
+    "category": "nature",
+    "subcategory": "풍경",
+    "emoji": "🌼",
+    "start": {
+      "month": 8,
+      "period": "late"
+    },
+    "end": {
+      "month": 9,
+      "period": "late"
+    },
+    "summary": "하얀 메밀꽃이 밭을 수놓는 늦여름 풍경",
+    "tip": "달빛 아래 메밀꽃을 보는 밤 산책도 좋아요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-snow-scene",
+    "name": "설경",
+    "category": "nature",
+    "subcategory": "풍경",
+    "emoji": "⛄",
+    "start": {
+      "month": 12,
+      "period": "early"
+    },
+    "end": {
+      "month": 2,
+      "period": "late"
+    },
+    "summary": "눈 덮인 산과 나무가 만드는 겨울 풍경",
+    "tip": "눈 그친 직후 맑은 아침이 가장 선명해요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-milky-way",
+    "name": "은하수",
+    "category": "nature",
+    "subcategory": "풍경",
+    "emoji": "🌌",
+    "start": {
+      "month": 6,
+      "period": "early"
+    },
+    "end": {
+      "month": 8,
+      "period": "late"
+    },
+    "summary": "맑고 어두운 여름밤 하늘에 펼쳐지는 은하수",
+    "tip": "달 없는 날 시골 밤하늘에서 잘 보여요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-firefly",
+    "name": "반딧불이",
+    "category": "nature",
+    "subcategory": "생물",
+    "emoji": "✨",
+    "start": {
+      "month": 6,
+      "period": "mid"
+    },
+    "end": {
+      "month": 7,
+      "period": "early"
+    },
+    "summary": "초여름 밤 맑은 계곡에서 반짝이는 반딧불이",
+    "tip": "불빛을 끄고 어두운 곳에서 조용히 관찰하세요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "nature-migratory-birds",
+    "name": "철새",
+    "category": "nature",
+    "subcategory": "생물",
+    "emoji": "🦢",
+    "start": {
+      "month": 11,
+      "period": "early"
+    },
+    "end": {
+      "month": 2,
+      "period": "late"
+    },
+    "summary": "겨울 강과 호수를 찾아오는 기러기와 오리 떼",
+    "tip": "넓은 습지나 하구에서 떼 지어 나는 모습을 볼 수 있어요",
+    "region": "전국"
+  },
+  {
+    "id": "nature-cicada",
+    "name": "매미",
+    "category": "nature",
+    "subcategory": "생물",
+    "emoji": "🌳",
+    "start": {
+      "month": 7,
+      "period": "early"
+    },
+    "end": {
+      "month": 8,
+      "period": "late"
+    },
+    "summary": "여름 나무에서 우렁차게 우는 곤충",
+    "tip": "한낮 무렵 울음소리가 가장 크게 들려요",
+    "region": "전국"
+  },
+  {
+    "id": "nature-cricket",
+    "name": "귀뚜라미",
+    "category": "nature",
+    "subcategory": "생물",
+    "emoji": "🦗",
+    "start": {
+      "month": 9,
+      "period": "early"
+    },
+    "end": {
+      "month": 10,
+      "period": "late"
+    },
+    "summary": "가을밤 풀숲에서 울며 가을을 알리는 벌레",
+    "tip": "해 진 뒤 조용한 풀숲에 귀 기울여 보세요",
+    "region": "전국"
+  },
+  {
+    "id": "nature-dragonfly",
+    "name": "고추잠자리",
+    "category": "nature",
+    "subcategory": "생물",
+    "emoji": "🦋",
+    "start": {
+      "month": 9,
+      "period": "early"
+    },
+    "end": {
+      "month": 10,
+      "period": "late"
+    },
+    "summary": "붉은 몸의 잠자리가 가을 들판을 날아다녀요",
+    "tip": "맑은 가을 오후 들판 가장자리에서 볼 수 있어요",
+    "region": "전국"
+  },
+  {
+    "id": "nature-frog",
+    "name": "개구리",
+    "category": "nature",
+    "subcategory": "생물",
+    "emoji": "🐸",
+    "start": {
+      "month": 3,
+      "period": "early"
+    },
+    "end": {
+      "month": 4,
+      "period": "early"
+    },
+    "summary": "봄비가 내린 뒤 논가에서 우는 개구리",
+    "tip": "비 온 뒤 저녁 논가에서 소리를 들어 보세요",
+    "region": "전국"
+  },
+  {
+    "id": "event-ipchun",
+    "name": "입춘",
+    "category": "event",
+    "subcategory": "절기",
+    "emoji": "🌱",
+    "start": {
+      "month": 2,
+      "period": "early"
+    },
+    "end": {
+      "month": 2,
+      "period": "early"
+    },
+    "summary": "봄이 시작된다는 절기, 입춘첩으로 봄맞이해요",
+    "tip": "입춘 무렵엔 집안을 환기하고 봄맞이 청소를 해요",
+    "region": "전국"
+  },
+  {
+    "id": "event-kimjang",
+    "name": "김장",
+    "category": "event",
+    "subcategory": "세시풍속",
+    "emoji": "🥬",
+    "start": {
+      "month": 11,
+      "period": "mid"
+    },
+    "end": {
+      "month": 12,
+      "period": "mid"
+    },
+    "summary": "겨울 김치를 한꺼번에 담그는 날",
+    "tip": "갓 담근 김치에 수육을 곁들여 보세요",
+    "region": "중부 기준"
+  },
+  {
+    "id": "event-hanshik",
+    "name": "한식",
+    "category": "event",
+    "subcategory": "명절",
+    "emoji": "🍡",
+    "start": {
+      "month": 4,
+      "period": "early"
+    },
+    "end": {
+      "month": 4,
+      "period": "early"
+    },
+    "summary": "조상의 묘를 돌보고 찬 음식을 먹는 날",
+    "tip": "쑥떡 같은 봄 떡을 나눠 먹으며 봄을 느껴 보세요",
+    "region": "전국"
+  },
+  {
+    "id": "event-haji",
+    "name": "하지",
+    "category": "event",
+    "subcategory": "절기",
+    "emoji": "🌞",
+    "start": {
+      "month": 6,
+      "period": "late"
+    },
+    "end": {
+      "month": 6,
+      "period": "late"
+    },
+    "summary": "낮이 가장 긴 절기, 여름의 시작을 알려요",
+    "tip": "해 질 녘까지 산책하며 긴 낮을 즐겨 보세요",
+    "region": "전국"
+  },
+  {
+    "id": "event-sunrise",
+    "name": "새해 해돋이",
+    "category": "event",
+    "subcategory": "세시풍속",
+    "emoji": "🌅",
+    "start": {
+      "month": 1,
+      "period": "early"
+    },
+    "end": {
+      "month": 1,
+      "period": "early"
+    },
+    "summary": "새해 첫 해를 보며 한 해를 시작해요",
+    "tip": "동해안은 일출이 7시 30분 무렵이에요",
+    "region": "전국"
+  },
+  {
+    "id": "event-dongji",
+    "name": "동지 팥죽",
+    "category": "event",
+    "subcategory": "절기",
+    "emoji": "🫘",
+    "start": {
+      "month": 12,
+      "period": "late"
+    },
+    "end": {
+      "month": 12,
+      "period": "late"
+    },
+    "summary": "밤이 가장 긴 날, 팥죽으로 액운을 쫓아요",
+    "tip": "새알심을 나이만큼 넣어 먹는 풍습이 있어요",
+    "region": "전국"
+  },
+  {
+    "id": "event-ipdong",
+    "name": "입동",
+    "category": "event",
+    "subcategory": "절기",
+    "emoji": "🧣",
+    "start": {
+      "month": 11,
+      "period": "early"
+    },
+    "end": {
+      "month": 11,
+      "period": "early"
+    },
+    "summary": "겨울이 시작된다는 절기, 따뜻한 국물이 생각나요",
+    "tip": "이 무렵부터 따뜻한 차나 국물 요리로 몸을 챙겨요",
+    "region": "전국"
+  },
+  {
+    "id": "event-kite-flying",
+    "name": "연날리기",
+    "category": "event",
+    "subcategory": "계절놀이",
+    "emoji": "🪁",
+    "start": {
+      "month": 1,
+      "period": "early"
+    },
+    "end": {
+      "month": 2,
+      "period": "mid"
+    },
+    "summary": "겨울 들판에서 연을 높이 띄우는 놀이",
+    "tip": "바람이 고른 맑은 날 넓은 곳에서 띄우면 잘 떠요",
+    "region": "전국"
+  },
+  {
+    "id": "event-beach-swimming",
+    "name": "해수욕장 물놀이",
+    "category": "event",
+    "subcategory": "계절놀이",
+    "emoji": "🌊",
+    "start": {
+      "month": 7,
+      "period": "early"
+    },
+    "end": {
+      "month": 8,
+      "period": "late"
+    },
+    "summary": "여름 바다와 계곡에서 즐기는 물놀이",
+    "tip": "개장 시기와 안전 안내를 미리 확인하고 가세요",
+    "region": "전국"
+  },
+  {
+    "id": "event-sledding",
+    "name": "눈썰매",
+    "category": "event",
+    "subcategory": "계절놀이",
+    "emoji": "🛷",
+    "start": {
+      "month": 1,
+      "period": "early"
+    },
+    "end": {
+      "month": 2,
+      "period": "mid"
+    },
+    "summary": "눈 쌓인 언덕에서 썰매를 타며 겨울을 즐겨요",
+    "tip": "눈이 단단히 다져진 날 타면 안전하고 재미있어요",
+    "region": "전국"
+  }
+]
