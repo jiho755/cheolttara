@@ -407,8 +407,9 @@ function alertMsg(a) { return `담아둔 '${a.info.name}'가 ${a.kind === 'end' 
 function viewAlerts() {
   const list = alertList();
   const on = !!lsGet('notifyOnOpen', false);
-  let h = `<div class="toggle"><div><b>앱을 열 때 알림 보내기</b><div style="font-size:13px;color:var(--sub)">담아둔 항목이 곧 끝나거나 시작하면 알려줘요</div></div>
-    <button class="switch" id="notifySwitch" role="switch" aria-checked="${on}" aria-label="앱을 열 때 알림 보내기"></button></div>
+  const canNotify = 'Notification' in window; // Android WebView 에는 Notification 이 없음
+  let h = `<div class="toggle"><div><b>앱을 열 때 알림 보내기</b><div style="font-size:13px;color:var(--sub)">${canNotify ? '담아둔 항목이 곧 끝나거나 시작하면 알려줘요' : '앱에서는 지원하지 않아요'}</div></div>
+    <button class="switch" id="notifySwitch" role="switch" aria-checked="${on && canNotify}" aria-label="앱을 열 때 알림 보내기"${canNotify ? '' : ' disabled style="opacity:.4"'}></button></div>
     <div class="note" id="notifyNote">ℹ️ 이 버전에서는 앱을 열지 않은 상태의 백그라운드 푸시 알림은 지원하지 않아요. 앱을 열 때만 알림을 보내드려요.</div>`;
   h += `<h2>곧 확인할 항목 <small>제철 14일 · 축제 3일 안</small></h2>`;
   h += list.length ? list.map((a) => `<button class="alert ${a.kind}" data-open="${esc(a.info.id)}" style="width:100%;text-align:left">
@@ -627,6 +628,10 @@ async function cardSheet() {
   out.dataset.ready = '1';
   $('#cardClose').onclick = closeSheet;
   $('#cardShare').onclick = async () => {
+    if (window.CheolttaraAndroid && typeof window.CheolttaraAndroid.saveImage === 'function') { // Android 앱: 갤러리에 저장 (토스트는 앱이 띄움)
+      try { window.CheolttaraAndroid.saveImage(canvas.toDataURL('image/png').split(',')[1], `철따라-${ui.year}.png`); } catch (e) { toast('이미지를 저장하지 못했어요'); }
+      return;
+    }
     const blob = await new Promise((r) => canvas.toBlob(r, 'image/png'));
     if (!blob) return toast('이미지를 만들지 못했어요');
     const file = new File([blob], `cheolttara-${ui.year}.png`, { type: 'image/png' });

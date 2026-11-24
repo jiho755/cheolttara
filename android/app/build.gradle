@@ -1,0 +1,45 @@
+plugins {
+    id 'com.android.application'
+}
+
+def appVersionCode = (System.getenv('VERSION_CODE') ?: '1').toInteger()
+
+android {
+    namespace 'io.github.jiho755.cheolttara'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'io.github.jiho755.cheolttara'
+        minSdk 24
+        targetSdk 34
+        versionCode appVersionCode
+        versionName '2.0.' + appVersionCode
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('../keystore/cheolttara-sideload.jks')
+            storeType 'pkcs12'
+            storePassword 'cheolttara'
+            keyAlias 'cheolttara'
+            keyPassword 'cheolttara'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}

@@ -343,6 +343,21 @@ try:
     pg.goto(u); pg.wait_for_selector('body[data-ready="1"]'); pg.wait_for_timeout(500)
     n2 = pg.evaluate('window.__notes.length'); check('at most once per item per day', n2 == n1, f'{n1}->{n2}')
     check('no page errors (notify flow)', not errs, str(errs))
+    # ============ Android 브리지 스텁 / Notification 없음 ============
+    ctx = b.new_context(viewport={'width': 390, 'height': 844}, locale='ko-KR'); pg = ctx.new_page(); errs = []
+    pg.on('pageerror', lambda x: errs.append(str(x)))
+    pg.add_init_script('''
+      delete window.Notification;
+      window.__saved=[]; window.CheolttaraAndroid={saveImage:function(b,n){window.__saved.push([b,n]);return true}};
+    ''')
+    pg.goto(A + '?date=2026-04-05'); pg.wait_for_selector('body[data-ready="1"]')
+    pg.click('[data-tab=stamps]'); pg.click('#makeCard'); pg.wait_for_selector('#cardOut[data-ready="1"]')
+    pg.click('#cardShare'); pg.wait_for_timeout(500)
+    sv = pg.evaluate('window.__saved')
+    check('android bridge: saveImage called with base64 png', len(sv) == 1 and len(sv[0][0]) > 1000 and not sv[0][0].startswith('data:') and sv[0][1].endswith('.png'), str([(len(x[0]), x[1]) for x in sv]))
+    pg.click('#cardClose'); pg.click('[data-tab=alerts]')
+    check('android: notify switch disabled when no Notification', pg.is_disabled('#notifySwitch') and '앱에서는 지원하지 않아요' in pg.locator('#view .toggle').inner_text())
+    check('no page errors (android bridge)', not errs, str(errs))
     b.close()
 finally:
     for s in srvs: s.terminate()

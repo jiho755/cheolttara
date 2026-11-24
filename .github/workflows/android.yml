@@ -1,0 +1,54 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'android/**'
+      - 'app.js'
+      - '.github/workflows/android.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
+
+      - name: Build signed release APK
+        env:
+          VERSION_CODE: ${{ github.run_number }}
+        run: gradle -p android assembleRelease --no-daemon --stacktrace
+
+      - name: Collect APK
+        run: cp android/app/build/outputs/apk/release/app-release.apk cheolttara.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cheolttara-apk
+          path: cheolttara.apk
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete apk-latest --yes --cleanup-tag || true
+          gh release create apk-latest cheolttara.apk \
+            --title "철따라 APK (최신)" \
+            --notes "빌드 번호: ${{ github.run_number }} (버전 2.0.${{ github.run_number }})
+
+          설치 방법: cheolttara.apk 다운로드 → 설치 허용(출처를 알 수 없는 앱) → 설치
+          업데이트: 같은 방법으로 새 APK를 받아 덮어쓰기 설치하면 됩니다." \
+            --latest

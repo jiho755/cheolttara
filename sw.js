@@ -1,4 +1,4 @@
-const CACHE = 'cheolttara-v2';
+const CACHE = 'cheolttara-v3';
 const FILES = ['./', 'index.html', 'styles.css', 'app.js', 'manifest.json', 'data/seasonal_items.json', 'data/places.json', 'data/festivals.json',
   'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png'];
 

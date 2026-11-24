@@ -24,6 +24,15 @@
 - 수동 실행: GitHub 저장소의 **Actions** 탭 > "Update festivals" > **Run workflow**.
 - 로컬 실행: `TOUR_API_KEY=... python3 scripts/fetch_festivals.py` / 네트워크 없이: `python3 scripts/fetch_festivals.py --fixture tests/fixtures/searchFestival2_page1.json --out /tmp/f.json`
 
+## 앱(APK)
+사이트(https://jiho755.github.io/cheolttara/)를 WebView 로 감싼 최소 Android 앱이 `android/` 에 있습니다. (AndroidX·Kotlin 없음, 순수 프레임워크 API)
+
+- `.github/workflows/android.yml` 이 `android/**`, `app.js` 변경 시(또는 수동 실행) 서명된 APK 를 빌드해 Releases 의 **apk-latest** 에 `cheolttara.apk` 로 올립니다. 버전은 `2.0.<빌드 번호>`.
+- 설치: Releases > apk-latest 에서 `cheolttara.apk` 다운로드 → 출처를 알 수 없는 앱 설치 허용 → 설치. 업데이트는 같은 방법으로 덮어쓰기.
+- 서명 키(`android/keystore/cheolttara-sideload.jks`)는 사이드로드용으로 저장소에 포함돼 있습니다. 스토어 배포용 키가 아닙니다.
+- 앱에서는 `window.CheolttaraAndroid.saveImage(base64, 파일명)` 브리지로 제철 카드를 갤러리(Pictures/철따라)에 저장하고, Notification API 가 없어 알림 토글은 비활성화됩니다.
+- 로컬 빌드(Android SDK + Gradle 8.7+): `VERSION_CODE=1 gradle -p android assembleRelease`
+
 ## 테스트
 ```
 cd /tmp && python3 -I /path/to/tests/test.py        # UI (Playwright, 390x844)
