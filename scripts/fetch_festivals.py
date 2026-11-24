@@ -71,6 +71,9 @@ def normalize_sido(addr1, ldong='', area=''):
     words = (addr1 or '').split()
     if words and words[0] in SIDO_NAMES:
         return SIDO_NAMES[words[0]]
+    if words and words[0].startswith('전남광주'):  # 전남광주통합특별시: 광주 자치구면 광주, 아니면 전남
+        gu = words[1] if len(words) > 1 else ''
+        return '광주' if gu in ('동구', '서구', '남구', '북구', '광산구') else '전남'
     code = str(ldong or '').strip()[:2]
     if code in LDONG_SIDO:
         return LDONG_SIDO[code]
