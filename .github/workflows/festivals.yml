@@ -1,0 +1,36 @@
+name: Update festivals
+
+on:
+  schedule:
+    - cron: '0 18 * * *'   # 18:00 UTC = 03:00 KST
+  workflow_dispatch:       # Actions 탭에서 수동 실행
+
+permissions:
+  contents: write
+
+concurrency:
+  group: festivals
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch festivals from TourAPI
+        env:
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+        run: python3 scripts/fetch_festivals.py
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- data/festivals.json; then
+            echo "No changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/festivals.json
+          git commit -m "chore: update festivals data"
+          git push

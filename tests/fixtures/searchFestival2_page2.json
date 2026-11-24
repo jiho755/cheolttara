@@ -1,0 +1,105 @@
+{
+ "response": {
+  "header": {
+   "resultCode": "0000",
+   "resultMsg": "OK"
+  },
+  "body": {
+   "items": {
+    "item": [
+     {
+      "addr1": "서울특별시 종로구 청계천로 1",
+      "addr2": "",
+      "contentid": "141001",
+      "contenttypeid": "15",
+      "createdtime": "20260901101010",
+      "eventstartdate": "20261106",
+      "eventenddate": "20261205",
+      "firstimage": "http://tong.visitkorea.or.kr/cms/resource/01/141001.jpg",
+      "firstimage2": "http://tong.visitkorea.or.kr/cms/resource/01/141001.jpg",
+      "cpyrhtDivCd": "Type3",
+      "mapx": "126.9784",
+      "mapy": "37.5665",
+      "mlevel": "6",
+      "modifiedtime": "20261101101010",
+      "tel": "02-123-4567",
+      "title": "[서울] 서울빛초롱축제 ",
+      "zipcode": "00000",
+      "lDongRegnCd": "11",
+      "lDongSignguCd": "110",
+      "areacode": "1"
+     },
+     {
+      "addr1": "울산광역시 남구 장생포고래로 1",
+      "addr2": "",
+      "contentid": "141015",
+      "contenttypeid": "15",
+      "createdtime": "20260901101010",
+      "eventstartdate": "20270401",
+      "eventenddate": "20270405",
+      "firstimage": "https://tong.visitkorea.or.kr/cms/resource/15/141015.jpg",
+      "firstimage2": "https://tong.visitkorea.or.kr/cms/resource/15/141015.jpg",
+      "cpyrhtDivCd": "Type3",
+      "mapx": "129.38",
+      "mapy": "35.5",
+      "mlevel": "6",
+      "modifiedtime": "20261101101010",
+      "tel": "052-226-1234",
+      "title": "울산 고래 문화 축제",
+      "zipcode": "00000",
+      "lDongRegnCd": "31",
+      "lDongSignguCd": "140",
+      "areacode": "7"
+     },
+     {
+      "addr1": "강원특별자치도 속초시 해안로 1",
+      "addr2": "",
+      "contentid": "141016",
+      "contenttypeid": "15",
+      "createdtime": "20260901101010",
+      "eventstartdate": "20270630",
+      "eventenddate": "20270705",
+      "firstimage": "https://tong.visitkorea.or.kr/cms/resource/16/141016.jpg",
+      "firstimage2": "https://tong.visitkorea.or.kr/cms/resource/16/141016.jpg",
+      "cpyrhtDivCd": "Type3",
+      "mapx": "128.59",
+      "mapy": "38.2",
+      "mlevel": "6",
+      "modifiedtime": "20261101101010",
+      "tel": "",
+      "title": "먼 미래 여름 축제",
+      "zipcode": "00000",
+      "lDongRegnCd": "51",
+      "lDongSignguCd": "210",
+      "areacode": "32"
+     },
+     {
+      "addr1": "알 수 없는 주소",
+      "addr2": "",
+      "contentid": "141017",
+      "contenttypeid": "15",
+      "createdtime": "20260901101010",
+      "eventstartdate": "20261212",
+      "eventenddate": "20261213",
+      "firstimage": "",
+      "firstimage2": "",
+      "cpyrhtDivCd": "Type3",
+      "mapx": "0",
+      "mapy": "0",
+      "mlevel": "6",
+      "modifiedtime": "20261101101010",
+      "tel": "",
+      "title": "국경 없는 야시장",
+      "zipcode": "00000",
+      "lDongRegnCd": "",
+      "lDongSignguCd": "",
+      "areacode": ""
+     }
+    ]
+   },
+   "numOfRows": 100,
+   "pageNo": 2,
+   "totalCount": 19
+  }
+ }
+}

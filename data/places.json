@@ -1,0 +1,1316 @@
+[
+  {
+    "id": "place-gantjeolgot",
+    "name": "간절곶 해돋이",
+    "sido": "울산",
+    "sigungu": "울주군",
+    "months": [
+      1
+    ],
+    "when": "1월 1일 새벽",
+    "summary": "국내 육지에서 새해 첫 해를 보는 곳으로 알려져 있어요",
+    "tip": "새벽 바닷바람이 차니 방한복과 핫팩을 챙기세요",
+    "related": [
+      "event-sunrise"
+    ]
+  },
+  {
+    "id": "place-homigot",
+    "name": "호미곶 해맞이",
+    "sido": "경북",
+    "sigungu": "포항시 남구",
+    "months": [
+      1
+    ],
+    "when": "1월 1일 새벽",
+    "summary": "동해 바다 위로 떠오르는 해를 만나는 해맞이 광장",
+    "tip": "해 뜨기 전 일찍 도착해야 좋은 자리를 잡을 수 있어요",
+    "related": [
+      "event-sunrise"
+    ]
+  },
+  {
+    "id": "place-jeongdongjin",
+    "name": "정동진 해돋이",
+    "sido": "강원",
+    "sigungu": "강릉시",
+    "months": [
+      1,
+      12
+    ],
+    "when": "1월 초 새벽",
+    "summary": "바닷가 기차역 앞에서 떠오르는 해를 볼 수 있어요",
+    "tip": "해 뜨기 전 역 근처 해변에 미리 가 자리를 잡으세요",
+    "related": [
+      "event-sunrise"
+    ]
+  },
+  {
+    "id": "place-daegwallyeong",
+    "name": "대관령 양떼목장",
+    "sido": "강원",
+    "sigungu": "평창군",
+    "months": [
+      1,
+      2
+    ],
+    "when": "1월~2월 눈 쌓인 날",
+    "summary": "눈 덮인 초원과 양떼가 어우러진 겨울 풍경",
+    "tip": "능선 바람이 세서 방풍 옷과 장갑이 꼭 필요해요",
+    "related": [
+      "nature-snow-scene"
+    ]
+  },
+  {
+    "id": "place-bukhansan-snow",
+    "name": "북한산 설경",
+    "sido": "서울",
+    "sigungu": "강북구",
+    "months": [
+      1,
+      2
+    ],
+    "when": "1월~2월 눈 온 다음 날",
+    "summary": "도심에서 가까운 바위 능선의 겨울 풍경",
+    "tip": "등산로가 미끄러우니 아이젠을 챙기세요",
+    "related": [
+      "nature-snow-scene"
+    ]
+  },
+  {
+    "id": "place-sogaecheon",
+    "name": "소래습지생태공원",
+    "sido": "인천",
+    "sigungu": "남동구",
+    "months": [
+      1,
+      12,
+      11
+    ],
+    "when": "11월~1월 철새 시기",
+    "summary": "겨울 철새가 모여드는 갯벌과 습지 공원",
+    "tip": "쌍안경을 챙기면 새 관찰이 훨씬 쉬워요",
+    "related": [
+      "nature-migratory-birds"
+    ]
+  },
+  {
+    "id": "place-hallasan",
+    "name": "한라산 윗세오름",
+    "sido": "제주",
+    "sigungu": "서귀포시",
+    "months": [
+      1,
+      2,
+      12
+    ],
+    "when": "12월~2월 눈 쌓인 날",
+    "summary": "눈이 쌓인 한라산 고지대의 설경을 볼 수 있어요",
+    "tip": "기상 악화로 탐방이 통제되는 날이 많아 확인이 필수예요",
+    "related": [
+      "nature-snow-scene"
+    ]
+  },
+  {
+    "id": "place-deogyusan",
+    "name": "덕유산 설천봉",
+    "sido": "전북",
+    "sigungu": "무주군",
+    "months": [
+      2,
+      1
+    ],
+    "when": "1월 중순~2월 설경",
+    "summary": "상고대와 눈꽃이 어우러지는 겨울 산 정상",
+    "tip": "곤돌라 운행 시간과 바람 세기를 미리 확인하세요",
+    "related": [
+      "nature-snow-scene"
+    ]
+  },
+  {
+    "id": "place-namhansanseong",
+    "name": "남한산성",
+    "sido": "경기",
+    "sigungu": "광주시",
+    "months": [
+      2,
+      1
+    ],
+    "when": "1월~2월 눈 온 날",
+    "summary": "눈 덮인 성곽길을 걸으며 겨울을 느낄 수 있어요",
+    "tip": "성곽길은 얼음이 많아 미끄럼 방지 신발이 좋아요",
+    "related": [
+      "nature-snow-scene"
+    ]
+  },
+  {
+    "id": "place-inwangsan",
+    "name": "인왕산",
+    "sido": "서울",
+    "sigungu": "종로구",
+    "months": [
+      2
+    ],
+    "when": "2월 눈 온 뒤 맑은 날",
+    "summary": "성곽 능선에서 눈 덮인 서울 도심을 내려다봐요",
+    "tip": "정상 구간은 바람이 세니 방한 장비를 챙기세요",
+    "related": [
+      "nature-snow-scene"
+    ]
+  },
+  {
+    "id": "place-odongdo",
+    "name": "오동도 동백숲",
+    "sido": "전남",
+    "sigungu": "여수시",
+    "months": [
+      2,
+      3
+    ],
+    "when": "2월 말~3월 초",
+    "summary": "짙푸른 숲 사이로 붉은 동백이 피는 섬",
+    "tip": "방파제 길을 따라 걸으면 바다 풍경도 함께 볼 수 있어요",
+    "related": []
+  },
+  {
+    "id": "place-sobaeksan",
+    "name": "소백산 설경",
+    "sido": "경북",
+    "sigungu": "영주시",
+    "months": [
+      2,
+      1
+    ],
+    "when": "1월~2월 눈꽃 산행",
+    "summary": "주목 군락 위로 눈이 쌓이는 설경으로 이름난 산",
+    "tip": "능선은 바람이 강하니 방풍 장비를 챙기세요",
+    "related": [
+      "nature-snow-scene"
+    ]
+  },
+  {
+    "id": "place-taebaeksan",
+    "name": "태백산 설경",
+    "sido": "강원",
+    "sigungu": "태백시",
+    "months": [
+      2,
+      1
+    ],
+    "when": "1월~2월 눈 쌓인 날",
+    "summary": "주목 군락에 눈이 내려앉는 겨울 산 풍경",
+    "tip": "정상 가는 길이 미끄러우니 아이젠이 필요해요",
+    "related": [
+      "nature-snow-scene"
+    ]
+  },
+  {
+    "id": "place-jeju-camellia",
+    "name": "카멜리아힐",
+    "sido": "제주",
+    "sigungu": "서귀포시",
+    "months": [
+      2,
+      3
+    ],
+    "when": "2월~3월 동백 시기",
+    "summary": "겨울에서 초봄까지 동백이 피는 정원",
+    "tip": "동백이 많이 피는 시기에 맞춰 방문 일정을 잡으세요",
+    "related": []
+  },
+  {
+    "id": "place-gwangyang-maehwa",
+    "name": "광양 매화마을",
+    "sido": "전남",
+    "sigungu": "광양시",
+    "months": [
+      3
+    ],
+    "when": "3월 중순 매화 절정",
+    "summary": "매화 꽃길이 마을을 하얗게 덮는 봄 명소",
+    "tip": "주차 공간이 좁아 이른 시간이나 대중교통이 편해요",
+    "related": [
+      "nature-plum-blossom"
+    ]
+  },
+  {
+    "id": "place-gurye-sansuyu",
+    "name": "구례 산수유마을",
+    "sido": "전남",
+    "sigungu": "구례군",
+    "months": [
+      3
+    ],
+    "when": "3월 중순 산수유 절정",
+    "summary": "노란 산수유꽃이 마을 골목을 물들이는 곳",
+    "tip": "마을 골목이 좁으니 천천히 걸어 다니세요",
+    "related": []
+  },
+  {
+    "id": "place-jiseomdo",
+    "name": "지심도",
+    "sido": "경남",
+    "sigungu": "거제시",
+    "months": [
+      3
+    ],
+    "when": "3월 동백 절정",
+    "summary": "섬 전체가 동백숲으로 덮인 작은 섬",
+    "tip": "배편 운항 시간이 제한적이니 미리 확인하세요",
+    "related": []
+  },
+  {
+    "id": "place-yeouido",
+    "name": "여의도 윤중로 벚꽃길",
+    "sido": "서울",
+    "sigungu": "영등포구",
+    "months": [
+      3,
+      4
+    ],
+    "when": "3월 말~4월 초",
+    "summary": "한강을 따라 벚꽃 터널이 이어지는 도심 명소",
+    "tip": "주말 낮은 매우 붐비니 이른 아침을 노려 보세요",
+    "related": [
+      "nature-cherry-blossom"
+    ]
+  },
+  {
+    "id": "place-changgyeonggung",
+    "name": "창경궁 홍매화",
+    "sido": "서울",
+    "sigungu": "종로구",
+    "months": [
+      3
+    ],
+    "when": "3월 초~중순",
+    "summary": "고궁 안에서 붉은 매화를 가까이 볼 수 있어요",
+    "tip": "관람 시간과 휴궁일을 미리 확인하고 가세요",
+    "related": [
+      "nature-plum-blossom"
+    ]
+  },
+  {
+    "id": "place-nokssan",
+    "name": "녹산로 벚꽃길",
+    "sido": "제주",
+    "sigungu": "서귀포시",
+    "months": [
+      3,
+      4
+    ],
+    "when": "3월 말~4월 초",
+    "summary": "왕벚나무 가로수가 긴 터널을 이루는 길",
+    "tip": "천천히 달리거나 걸으면 꽃길을 편하게 볼 수 있어요",
+    "related": [
+      "nature-cherry-blossom"
+    ]
+  },
+  {
+    "id": "place-seokchon",
+    "name": "석촌호수 벚꽃길",
+    "sido": "서울",
+    "sigungu": "송파구",
+    "months": [
+      3,
+      4
+    ],
+    "when": "3월 말~4월 초",
+    "summary": "호수 둘레를 따라 벚꽃이 피는 도심 산책로",
+    "tip": "평일 오전에 가면 훨씬 여유롭게 걸을 수 있어요",
+    "related": [
+      "nature-cherry-blossom"
+    ]
+  },
+  {
+    "id": "place-jinhae-yeojwacheon",
+    "name": "진해 여좌천",
+    "sido": "경남",
+    "sigungu": "창원시 진해구",
+    "months": [
+      4
+    ],
+    "when": "4월 초 벚꽃 절정",
+    "summary": "냇가를 따라 연분홍 벚꽃 터널이 이어져요",
+    "tip": "주말엔 매우 붐비니 아침 일찍 가는 걸 추천해요",
+    "related": [
+      "nature-cherry-blossom"
+    ]
+  },
+  {
+    "id": "place-ssanggye",
+    "name": "쌍계사 벚꽃길",
+    "sido": "경남",
+    "sigungu": "하동군",
+    "months": [
+      4
+    ],
+    "when": "4월 초 벚꽃 절정",
+    "summary": "길게 이어진 벚나무 사이로 사찰까지 걷는 길",
+    "tip": "주차가 어려우니 대중교통이나 이른 방문을 고려하세요",
+    "related": [
+      "nature-cherry-blossom"
+    ]
+  },
+  {
+    "id": "place-nanji",
+    "name": "난지한강공원 유채꽃",
+    "sido": "서울",
+    "sigungu": "마포구",
+    "months": [
+      4
+    ],
+    "when": "4월 초~중순",
+    "summary": "노란 유채꽃이 강변 들판을 가득 채우는 곳",
+    "tip": "바람이 적은 맑은 날 오후에 가면 사진이 잘 나와요",
+    "related": [
+      "nature-rapeseed"
+    ]
+  },
+  {
+    "id": "place-songdo",
+    "name": "송도 센트럴파크",
+    "sido": "인천",
+    "sigungu": "연수구",
+    "months": [
+      4
+    ],
+    "when": "4월 초 벚꽃 절정",
+    "summary": "고층 빌딩 사이로 벚꽃 산책로가 이어지는 공원",
+    "tip": "호수 주변 산책로를 따라 걸으면 풍경이 좋아요",
+    "related": [
+      "nature-cherry-blossom"
+    ]
+  },
+  {
+    "id": "place-bomun",
+    "name": "보문관광단지 벚꽃길",
+    "sido": "경북",
+    "sigungu": "경주시",
+    "months": [
+      4
+    ],
+    "when": "4월 초 벚꽃 절정",
+    "summary": "보문호를 둘러싼 벚꽃길을 걷거나 자전거로 돌아요",
+    "tip": "호수 둘레 자전거 대여를 이용하면 여유롭게 돌 수 있어요",
+    "related": [
+      "nature-cherry-blossom"
+    ]
+  },
+  {
+    "id": "place-suseong",
+    "name": "수성못",
+    "sido": "대구",
+    "sigungu": "수성구",
+    "months": [
+      4
+    ],
+    "when": "4월 초 벚꽃 절정",
+    "summary": "저수지 둘레를 따라 벚꽃과 산책로가 이어져요",
+    "tip": "주말 저녁엔 혼잡하니 낮 시간 방문도 고려하세요",
+    "related": [
+      "nature-cherry-blossom"
+    ]
+  },
+  {
+    "id": "place-yeongchwisan",
+    "name": "영취산 진달래",
+    "sido": "전남",
+    "sigungu": "여수시",
+    "months": [
+      4
+    ],
+    "when": "3월 말~4월 초",
+    "summary": "능선 가득 연분홍 진달래가 피는 산",
+    "tip": "산길에 가파른 구간이 있으니 편한 신발을 신으세요",
+    "related": [
+      "nature-azalea"
+    ]
+  },
+  {
+    "id": "place-gochang-barley",
+    "name": "고창 청보리밭",
+    "sido": "전북",
+    "sigungu": "고창군",
+    "months": [
+      5
+    ],
+    "when": "5월 초~중순",
+    "summary": "바람을 따라 푸른 보리가 물결치는 들판",
+    "tip": "바람결을 따라 걸으며 물결을 감상해 보세요",
+    "related": [
+      "nature-barley-field"
+    ]
+  },
+  {
+    "id": "place-gapado",
+    "name": "가파도 청보리밭",
+    "sido": "제주",
+    "sigungu": "서귀포시",
+    "months": [
+      5
+    ],
+    "when": "5월 초~중순",
+    "summary": "작은 섬 전체가 푸른 청보리로 물드는 곳",
+    "tip": "배편 시간표를 확인하고 섬 안은 걸어서 둘러보세요",
+    "related": [
+      "nature-barley-field"
+    ]
+  },
+  {
+    "id": "place-hwangmaesan",
+    "name": "황매산 철쭉",
+    "sido": "경남",
+    "sigungu": "합천군",
+    "months": [
+      5
+    ],
+    "when": "5월 초 철쭉 절정",
+    "summary": "분홍 철쭉이 능선을 덮는 산",
+    "tip": "정상 주변은 바람이 강하니 겉옷을 챙기세요",
+    "related": [
+      "nature-rhododendron"
+    ]
+  },
+  {
+    "id": "place-baraebong",
+    "name": "바래봉 철쭉",
+    "sido": "전북",
+    "sigungu": "남원시",
+    "months": [
+      5
+    ],
+    "when": "5월 초 철쭉 절정",
+    "summary": "봉우리 능선을 따라 철쭉이 피는 지리산 자락 산",
+    "tip": "정상까지 오르막이 가파르니 여유 있게 오르세요",
+    "related": [
+      "nature-rhododendron"
+    ]
+  },
+  {
+    "id": "place-everland-rose",
+    "name": "에버랜드 장미원",
+    "sido": "경기",
+    "sigungu": "용인시 처인구",
+    "months": [
+      5,
+      6
+    ],
+    "when": "5월 말~6월 초",
+    "summary": "여러 장미 품종이 모인 테마파크 안 장미 정원",
+    "tip": "입장권이 필요하고 주말엔 대기 줄이 길어요",
+    "related": [
+      "nature-rose"
+    ]
+  },
+  {
+    "id": "place-boseong-tea",
+    "name": "보성 녹차밭",
+    "sido": "전남",
+    "sigungu": "보성군",
+    "months": [
+      5,
+      4
+    ],
+    "when": "4월~5월 초록 차밭",
+    "summary": "계단식 차밭에 초록 물결이 펼쳐지는 곳",
+    "tip": "오전 햇살이 부드러운 시간에 산책하면 좋아요",
+    "related": []
+  },
+  {
+    "id": "place-seoul-botanic",
+    "name": "서울식물원",
+    "sido": "서울",
+    "sigungu": "강서구",
+    "months": [
+      5,
+      6
+    ],
+    "when": "5월~6월 정원 시기",
+    "summary": "온실과 정원을 함께 둘러볼 수 있는 도심 식물원",
+    "tip": "계절마다 정원 구성이 달라 방문 전 안내를 확인하세요",
+    "related": []
+  },
+  {
+    "id": "place-olympic-rose",
+    "name": "올림픽공원 장미광장",
+    "sido": "서울",
+    "sigungu": "송파구",
+    "months": [
+      6,
+      5
+    ],
+    "when": "5월 말~6월 중순",
+    "summary": "다양한 품종의 장미가 피는 도심 공원 정원",
+    "tip": "해 질 무렵 가면 덜 덥고 사진도 잘 나와요",
+    "related": [
+      "nature-rose"
+    ]
+  },
+  {
+    "id": "place-yeongyang-firefly",
+    "name": "영양 반딧불이 생태공원",
+    "sido": "경북",
+    "sigungu": "영양군",
+    "months": [
+      6,
+      7
+    ],
+    "when": "6월~7월 초 밤",
+    "summary": "맑은 계곡 주변에서 반딧불이를 볼 수 있어요",
+    "tip": "불빛을 끄고 어두운 곳에서 조용히 관찰하세요",
+    "related": [
+      "nature-firefly"
+    ]
+  },
+  {
+    "id": "place-byeolmaro",
+    "name": "별마로천문대",
+    "sido": "강원",
+    "sigungu": "영월군",
+    "months": [
+      6,
+      7,
+      8
+    ],
+    "when": "6월~8월 맑은 밤",
+    "summary": "달 없는 여름밤 은하수를 볼 수 있는 천문대",
+    "tip": "방문 전 날씨와 달의 위상을 확인하고 계획하세요",
+    "related": [
+      "nature-milky-way"
+    ]
+  },
+  {
+    "id": "place-naksan",
+    "name": "낙산해수욕장",
+    "sido": "강원",
+    "sigungu": "양양군",
+    "months": [
+      6,
+      7,
+      8
+    ],
+    "when": "6월 말~8월 해수욕 시기",
+    "summary": "동해 백사장과 바닷가 산책길이 있는 해변",
+    "tip": "개장 시기와 안전 안내를 미리 확인하고 가세요",
+    "related": [
+      "event-beach-swimming"
+    ]
+  },
+  {
+    "id": "place-daebu",
+    "name": "대부도 해수욕장",
+    "sido": "경기",
+    "sigungu": "안산시",
+    "months": [
+      6,
+      7,
+      8
+    ],
+    "when": "6월 말~8월 해수욕 시기",
+    "summary": "서해 갯벌과 해변을 함께 즐기는 곳",
+    "tip": "물때에 따라 갯벌 풍경이 달라 시간표를 확인하세요",
+    "related": [
+      "event-beach-swimming"
+    ]
+  },
+  {
+    "id": "place-haeundae",
+    "name": "해운대 해수욕장",
+    "sido": "부산",
+    "sigungu": "해운대구",
+    "months": [
+      6,
+      7,
+      8
+    ],
+    "when": "6월 말~8월 해수욕 시기",
+    "summary": "넓은 백사장과 고층 빌딩이 어우러진 해변",
+    "tip": "여름 주말엔 매우 붐벼 이른 아침이나 저녁을 추천해요",
+    "related": [
+      "event-beach-swimming"
+    ]
+  },
+  {
+    "id": "place-hamdeok",
+    "name": "함덕해수욕장",
+    "sido": "제주",
+    "sigungu": "제주시",
+    "months": [
+      6,
+      7,
+      8
+    ],
+    "when": "6월 말~8월 해수욕 시기",
+    "summary": "맑은 바다와 하얀 모래가 어우러진 해변",
+    "tip": "해변 주차장이 금방 차니 대중교통이나 일찍 가세요",
+    "related": [
+      "event-beach-swimming"
+    ]
+  },
+  {
+    "id": "place-semiwon",
+    "name": "세미원 연꽃",
+    "sido": "경기",
+    "sigungu": "양평군",
+    "months": [
+      7,
+      8
+    ],
+    "when": "7월~8월 연꽃 절정",
+    "summary": "두물머리 강변에 연꽃이 피는 수생 정원",
+    "tip": "연꽃은 이른 아침에 활짝 피니 오전 방문이 좋아요",
+    "related": [
+      "nature-lotus"
+    ]
+  },
+  {
+    "id": "place-gungnamji",
+    "name": "부여 궁남지",
+    "sido": "충남",
+    "sigungu": "부여군",
+    "months": [
+      7,
+      8
+    ],
+    "when": "7월~8월 연꽃 시기",
+    "summary": "백제 궁궐 연못에 연꽃이 피는 옛 정원",
+    "tip": "연못 둘레 산책로는 그늘이 적으니 모자를 챙기세요",
+    "related": [
+      "nature-lotus"
+    ]
+  },
+  {
+    "id": "place-gyeongpo",
+    "name": "경포해수욕장",
+    "sido": "강원",
+    "sigungu": "강릉시",
+    "months": [
+      7,
+      8
+    ],
+    "when": "7월~8월 해수욕 시기",
+    "summary": "얕은 바다와 넓은 백사장이 있는 동해 해변",
+    "tip": "주말 혼잡이 심하니 평일이나 이른 시간이 좋아요",
+    "related": [
+      "event-beach-swimming"
+    ]
+  },
+  {
+    "id": "place-sangju",
+    "name": "상주은모래비치",
+    "sido": "경남",
+    "sigungu": "남해군",
+    "months": [
+      7,
+      8
+    ],
+    "when": "7월~8월 해수욕 시기",
+    "summary": "고운 모래와 얕은 물이 있는 남해의 해변",
+    "tip": "해변 샤워시설과 주차 상황을 미리 확인하세요",
+    "related": [
+      "event-beach-swimming"
+    ]
+  },
+  {
+    "id": "place-gujeondong",
+    "name": "구천동 계곡",
+    "sido": "전북",
+    "sigungu": "무주군",
+    "months": [
+      7,
+      8
+    ],
+    "when": "7월~8월 계곡 시기",
+    "summary": "맑은 물과 바위가 이어지는 여름 계곡",
+    "tip": "계곡 물이 불어난 날엔 물놀이를 피하세요",
+    "related": []
+  },
+  {
+    "id": "place-mongsanpo",
+    "name": "몽산포해수욕장",
+    "sido": "충남",
+    "sigungu": "태안군",
+    "months": [
+      7,
+      8
+    ],
+    "when": "7월~8월 해수욕 시기",
+    "summary": "소나무 숲과 백사장이 이어지는 서해 해변",
+    "tip": "솔숲 야영장이 인기 있어 예약을 미리 하세요",
+    "related": [
+      "event-beach-swimming"
+    ]
+  },
+  {
+    "id": "place-yongchu",
+    "name": "용추계곡",
+    "sido": "경기",
+    "sigungu": "가평군",
+    "months": [
+      7,
+      8
+    ],
+    "when": "7월~8월 계곡 시기",
+    "summary": "맑은 물이 흐르는 가평의 여름 계곡",
+    "tip": "계곡 주변 쓰레기는 가져가는 습관을 지켜요",
+    "related": []
+  },
+  {
+    "id": "place-deokjin",
+    "name": "덕진공원 연꽃",
+    "sido": "전북",
+    "sigungu": "전주시 덕진구",
+    "months": [
+      8,
+      7
+    ],
+    "when": "7월~8월 연꽃 시기",
+    "summary": "덕진연못에 연꽃이 피는 도심 공원",
+    "tip": "연못 둘레를 천천히 걸으며 연잎과 꽃을 보세요",
+    "related": [
+      "nature-lotus"
+    ]
+  },
+  {
+    "id": "place-daecheon",
+    "name": "대천해수욕장",
+    "sido": "충남",
+    "sigungu": "보령시",
+    "months": [
+      8,
+      7
+    ],
+    "when": "7월~8월 해수욕 시기",
+    "summary": "긴 백사장과 조개구이 거리가 있는 서해 해변",
+    "tip": "주차장이 혼잡하니 대중교통을 고려해 보세요",
+    "related": [
+      "event-beach-swimming"
+    ]
+  },
+  {
+    "id": "place-seonyudong",
+    "name": "선유동계곡",
+    "sido": "경북",
+    "sigungu": "문경시",
+    "months": [
+      8,
+      7
+    ],
+    "when": "7월~8월 계곡 시기",
+    "summary": "바위와 맑은 물이 어우러진 여름 계곡",
+    "tip": "물살이 빠른 곳은 피하고 안전 구역에서만 노세요",
+    "related": []
+  },
+  {
+    "id": "place-gwangalli",
+    "name": "광안리해수욕장",
+    "sido": "부산",
+    "sigungu": "수영구",
+    "months": [
+      8,
+      7
+    ],
+    "when": "7월~8월 해수욕 시기",
+    "summary": "광안대교 야경을 함께 볼 수 있는 해변",
+    "tip": "야간 방문은 교통이 붐비니 대중교통을 이용하세요",
+    "related": [
+      "event-beach-swimming"
+    ]
+  },
+  {
+    "id": "place-bonpyeong",
+    "name": "봉평 메밀꽃밭",
+    "sido": "강원",
+    "sigungu": "평창군",
+    "months": [
+      8,
+      9
+    ],
+    "when": "8월 말~9월 초",
+    "summary": "하얀 메밀꽃이 밭을 덮는 늦여름 풍경",
+    "tip": "달빛 아래 산책하면 메밀꽃 풍경이 운치 있어요",
+    "related": [
+      "nature-buckwheat-field"
+    ]
+  },
+  {
+    "id": "place-eulwangni",
+    "name": "을왕리해수욕장",
+    "sido": "인천",
+    "sigungu": "중구",
+    "months": [
+      8,
+      7
+    ],
+    "when": "7월~8월 해수욕 시기",
+    "summary": "서해 석양을 바라보며 걷기 좋은 해변",
+    "tip": "낙조 시간은 날짜마다 달라 미리 확인하세요",
+    "related": [
+      "event-beach-swimming"
+    ]
+  },
+  {
+    "id": "place-deokjeokdo",
+    "name": "덕적도",
+    "sido": "인천",
+    "sigungu": "옹진군",
+    "months": [
+      8,
+      7
+    ],
+    "when": "7월~8월 여름 바다",
+    "summary": "한적한 섬 바닷가에서 쉬어 가기 좋은 서해 섬",
+    "tip": "섬은 배편이 제한적이니 운항 시간을 미리 확인하세요",
+    "related": [
+      "event-beach-swimming"
+    ]
+  },
+  {
+    "id": "place-myeongseongsan",
+    "name": "명성산 억새",
+    "sido": "경기",
+    "sigungu": "포천시",
+    "months": [
+      9,
+      10
+    ],
+    "when": "9월 말~10월 초",
+    "summary": "은빛 억새가 능선을 뒤덮는 가을 산",
+    "tip": "억새 산책로는 주말 혼잡이 심하니 아침 방문을 추천해요",
+    "related": [
+      "nature-silver-grass"
+    ]
+  },
+  {
+    "id": "place-haneul-park",
+    "name": "하늘공원 억새",
+    "sido": "서울",
+    "sigungu": "마포구",
+    "months": [
+      9,
+      10
+    ],
+    "when": "9월 말~10월 초",
+    "summary": "옛 쓰레기 매립지가 억새 명소로 바뀐 공원",
+    "tip": "해 질 무렵 억새가 금빛으로 보여요",
+    "related": [
+      "nature-silver-grass"
+    ]
+  },
+  {
+    "id": "place-mindungsan",
+    "name": "민둥산 억새",
+    "sido": "강원",
+    "sigungu": "정선군",
+    "months": [
+      9,
+      10
+    ],
+    "when": "9월 말~10월 초",
+    "summary": "나무 없는 정상이 은빛 억새로 덮인 산",
+    "tip": "정상까지 오르막이 길어 편한 신발이 좋아요",
+    "related": [
+      "nature-silver-grass"
+    ]
+  },
+  {
+    "id": "place-sinbulsan",
+    "name": "신불산 억새평원",
+    "sido": "울산",
+    "sigungu": "울주군",
+    "months": [
+      9,
+      10
+    ],
+    "when": "9월 말~10월 초",
+    "summary": "넓은 억새 평원이 능선 위로 펼쳐지는 산",
+    "tip": "등산로 입구 주차 공간이 적어 대중교통이 편해요",
+    "related": [
+      "nature-silver-grass"
+    ]
+  },
+  {
+    "id": "place-sunchon-reed",
+    "name": "순천만 갈대밭",
+    "sido": "전남",
+    "sigungu": "순천시",
+    "months": [
+      9,
+      10
+    ],
+    "when": "9월 말~11월 갈대 시기",
+    "summary": "바람에 갈대가 물결치는 드넓은 습지",
+    "tip": "데크길을 따라 걸으면 습지 풍경을 편하게 볼 수 있어요",
+    "related": []
+  },
+  {
+    "id": "place-sanggumburi",
+    "name": "산굼부리",
+    "sido": "제주",
+    "sigungu": "제주시",
+    "months": [
+      9,
+      10
+    ],
+    "when": "9월 말~10월 억새 시기",
+    "summary": "분화구 안에 억새와 야생 식물이 가득한 곳",
+    "tip": "분화구 둘레는 바람이 강하니 겉옷을 챙기세요",
+    "related": [
+      "nature-silver-grass"
+    ]
+  },
+  {
+    "id": "place-seopjikoji",
+    "name": "섭지코지",
+    "sido": "제주",
+    "sigungu": "서귀포시",
+    "months": [
+      9,
+      10
+    ],
+    "when": "9월 말~10월 가을 풍경",
+    "summary": "바다 절벽과 등대가 어우러진 해안 산책로",
+    "tip": "해안 바람이 세니 미끄럼 방지 신발을 신으세요",
+    "related": [
+      "nature-silver-grass"
+    ]
+  },
+  {
+    "id": "place-seoraksan",
+    "name": "설악산 단풍",
+    "sido": "강원",
+    "sigungu": "속초시",
+    "months": [
+      10,
+      9
+    ],
+    "when": "10월 중순 단풍 절정",
+    "summary": "높은 능선부터 단풍이 내려오는 가을 산",
+    "tip": "단풍철엔 주차와 입산 통제가 잦으니 미리 확인하세요",
+    "related": [
+      "nature-maple-hike"
+    ]
+  },
+  {
+    "id": "place-naejangsan",
+    "name": "내장산 단풍",
+    "sido": "전북",
+    "sigungu": "정읍시",
+    "months": [
+      10,
+      11
+    ],
+    "when": "10월 말~11월 초",
+    "summary": "울긋불긋 단풍으로 유명한 전북의 가을 산",
+    "tip": "단풍 절정 주말엔 정체가 심해 이른 아침 출발을 추천해요",
+    "related": [
+      "nature-maple-hike"
+    ]
+  },
+  {
+    "id": "place-yongmunsa",
+    "name": "용문사 은행나무",
+    "sido": "경기",
+    "sigungu": "양평군",
+    "months": [
+      10,
+      11
+    ],
+    "when": "10월 말~11월 초",
+    "summary": "천년 가까이 된 은행나무가 노랗게 물드는 사찰",
+    "tip": "나무 주변은 사람이 많으니 이른 아침이 한적해요",
+    "related": [
+      "nature-ginkgo-leaves"
+    ]
+  },
+  {
+    "id": "place-gwanaksan",
+    "name": "관악산 단풍",
+    "sido": "서울",
+    "sigungu": "관악구",
+    "months": [
+      10,
+      11
+    ],
+    "when": "10월 말~11월 초",
+    "summary": "도심과 가까운 산길에서 가을 단풍을 즐겨요",
+    "tip": "정상 능선은 바람이 세니 겉옷을 챙기세요",
+    "related": [
+      "nature-maple-hike"
+    ]
+  },
+  {
+    "id": "place-sinseongri",
+    "name": "신성리 갈대밭",
+    "sido": "충남",
+    "sigungu": "서천군",
+    "months": [
+      10,
+      9,
+      11
+    ],
+    "when": "10월 중순~11월 갈대 시기",
+    "summary": "금강 하구 가까이 갈대가 물결치는 곳",
+    "tip": "강변 바람이 세니 햇살 좋은 오후 방문을 추천해요",
+    "related": []
+  },
+  {
+    "id": "place-juwangsan",
+    "name": "주왕산 단풍",
+    "sido": "경북",
+    "sigungu": "청송군",
+    "months": [
+      10,
+      11
+    ],
+    "when": "10월 말~11월 초 단풍",
+    "summary": "기암절벽과 단풍이 어우러진 경북의 가을 산",
+    "tip": "주차장이 빨리 차니 이른 시간에 도착하세요",
+    "related": [
+      "nature-maple-hike"
+    ]
+  },
+  {
+    "id": "place-songnisan",
+    "name": "속리산 단풍",
+    "sido": "충북",
+    "sigungu": "보은군",
+    "months": [
+      10,
+      11
+    ],
+    "when": "10월 말~11월 초",
+    "summary": "법주사 가는 숲길에 단풍이 짙게 물드는 산",
+    "tip": "법주사 숲길은 천천히 걷기 좋으니 여유 있게 걸어 보세요",
+    "related": [
+      "nature-maple-hike"
+    ]
+  },
+  {
+    "id": "place-damyang-metasequoia",
+    "name": "담양 메타세쿼이아길",
+    "sido": "전남",
+    "sigungu": "담양군",
+    "months": [
+      11,
+      10
+    ],
+    "when": "10월 말~11월 초",
+    "summary": "쭉 뻗은 메타세쿼이아 길이 가을에 갈색으로 물들어요",
+    "tip": "주말 낮엔 사람이 많으니 이른 아침이 쾌적해요",
+    "related": [
+      "nature-metasequoia"
+    ]
+  },
+  {
+    "id": "place-deoksugung",
+    "name": "덕수궁 돌담길 은행나무",
+    "sido": "서울",
+    "sigungu": "중구",
+    "months": [
+      11,
+      10
+    ],
+    "when": "11월 초 은행잎 절정",
+    "summary": "돌담길을 따라 노란 은행잎이 쌓이는 길",
+    "tip": "돌담길은 인파가 많으니 평일 오전 산책을 추천해요",
+    "related": [
+      "nature-ginkgo-leaves"
+    ]
+  },
+  {
+    "id": "place-junam",
+    "name": "주남저수지",
+    "sido": "경남",
+    "sigungu": "창원시",
+    "months": [
+      11,
+      12
+    ],
+    "when": "11월~1월 철새 시기",
+    "summary": "겨울 철새 떼가 날아드는 큰 저수지",
+    "tip": "관찰대에서는 조용히 있어야 새가 덜 놀라요",
+    "related": [
+      "nature-migratory-birds"
+    ]
+  },
+  {
+    "id": "place-cheonsuman",
+    "name": "서산 천수만",
+    "sido": "충남",
+    "sigungu": "서산시",
+    "months": [
+      11,
+      12
+    ],
+    "when": "11월~2월 철새 시기",
+    "summary": "겨울 철새 무리가 머무는 서해 간척 습지",
+    "tip": "관찰 시설이 있는 곳에서 조용히 지켜보세요",
+    "related": [
+      "nature-migratory-birds"
+    ]
+  },
+  {
+    "id": "place-cheorwon",
+    "name": "철원 평야 철새지",
+    "sido": "강원",
+    "sigungu": "철원군",
+    "months": [
+      11,
+      12
+    ],
+    "when": "11월~2월 철새 시기",
+    "summary": "두루미와 철새가 찾는 넓은 들판과 평야",
+    "tip": "겨울 아침 기온이 낮으니 방한 장비를 챙기세요",
+    "related": [
+      "nature-migratory-birds"
+    ]
+  },
+  {
+    "id": "place-jangtaesan",
+    "name": "장태산 자연휴양림",
+    "sido": "대전",
+    "sigungu": "서구",
+    "months": [
+      11,
+      10
+    ],
+    "when": "11월 초 단풍 절정",
+    "summary": "메타세쿼이아 숲이 붉게 물드는 휴양림",
+    "tip": "숲길 데크를 따라 걸으면 편하게 돌아볼 수 있어요",
+    "related": [
+      "nature-maple-hike"
+    ]
+  },
+  {
+    "id": "place-surisa",
+    "name": "남양주 수종사",
+    "sido": "경기",
+    "sigungu": "남양주시",
+    "months": [
+      11,
+      10
+    ],
+    "when": "11월 초 단풍 시기",
+    "summary": "산중 사찰에서 한강과 단풍을 함께 볼 수 있어요",
+    "tip": "사찰까지 오르막이 있으니 편한 신발을 신으세요",
+    "related": []
+  },
+  {
+    "id": "place-namiseom",
+    "name": "남이섬",
+    "sido": "강원",
+    "sigungu": "춘천시",
+    "months": [
+      12,
+      1
+    ],
+    "when": "12월~1월 눈 내린 날",
+    "summary": "눈 덮인 메타세쿼이아 길과 강변 풍경이 고요해요",
+    "tip": "가평 선착장에서 배를 타고 들어가요",
+    "related": [
+      "nature-snow-scene"
+    ]
+  },
+  {
+    "id": "place-seongsan",
+    "name": "성산일출봉",
+    "sido": "제주",
+    "sigungu": "서귀포시",
+    "months": [
+      12,
+      1
+    ],
+    "when": "12월~1월 일출 시기",
+    "summary": "분화구 능선 위로 떠오르는 해를 볼 수 있는 곳",
+    "tip": "일출 전에 도착해 계단 오르는 시간을 넉넉히 잡으세요",
+    "related": [
+      "event-sunrise"
+    ]
+  },
+  {
+    "id": "place-maisan",
+    "name": "마이산",
+    "sido": "전북",
+    "sigungu": "진안군",
+    "months": [
+      12,
+      1,
+      2
+    ],
+    "when": "12월~2월 눈 쌓인 날",
+    "summary": "기묘한 바위 봉우리에 눈이 쌓이는 겨울 풍경",
+    "tip": "탑사 가는 계단은 미끄러우니 조심히 오르세요",
+    "related": [
+      "nature-snow-scene"
+    ]
+  },
+  {
+    "id": "place-namsan",
+    "name": "남산 N서울타워",
+    "sido": "서울",
+    "sigungu": "용산구",
+    "months": [
+      12,
+      1,
+      2
+    ],
+    "when": "12월~2월 눈 내린 날",
+    "summary": "눈 내린 도심 숲과 서울 야경을 함께 볼 수 있어요",
+    "tip": "정상 셔틀 대기 줄이 길어 평일 저녁이 한결 나아요",
+    "related": [
+      "nature-snow-scene"
+    ]
+  },
+  {
+    "id": "place-dumulmeori",
+    "name": "두물머리",
+    "sido": "경기",
+    "sigungu": "양평군",
+    "months": [
+      12,
+      1
+    ],
+    "when": "12월~1월 이른 아침",
+    "summary": "강 위로 물안개가 피어오르는 겨울 아침 풍경",
+    "tip": "해 뜨기 전후 30분이 물안개가 가장 짙어요",
+    "related": [
+      "nature-snow-scene"
+    ]
+  },
+  {
+    "id": "place-daedunsan",
+    "name": "대둔산 설경",
+    "sido": "전북",
+    "sigungu": "완주군",
+    "months": [
+      12,
+      1,
+      2
+    ],
+    "when": "12월~2월 눈 쌓인 날",
+    "summary": "암릉 봉우리에 눈이 내려앉는 겨울 산",
+    "tip": "케이블카 운행 여부를 미리 확인하세요",
+    "related": [
+      "nature-snow-scene"
+    ]
+  },
+  {
+    "id": "place-woljeongsa",
+    "name": "오대산 월정사 전나무숲",
+    "sido": "강원",
+    "sigungu": "평창군",
+    "months": [
+      12,
+      1,
+      2
+    ],
+    "when": "12월~2월 눈 온 뒤",
+    "summary": "눈 덮인 전나무 숲길을 따라 걷는 겨울 산책",
+    "tip": "길이 평탄해 아이와 함께 걷기도 좋아요",
+    "related": [
+      "nature-snow-scene"
+    ]
+  }
+]
