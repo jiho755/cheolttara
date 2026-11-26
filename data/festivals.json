@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T11:00:17+09:00",
+ "updated": "2026-11-26T10:41:25+09:00",
  "source": "한국관광공사 TourAPI",
  "items": [
   {"id": "3481597", "title": "페인터즈", "start": "2022-11-01", "end": "2026-12-31", "addr": "서울특별시 중구 정동길 3 (정동) 경향신문사 1층", "sido": "서울", "image": "https://tong.visitkorea.or.kr/cms/resource/01/4060301_image2_1.png", "tel": "02-766-7848", "mapx": 126.969976113229, "mapy": 37.5681732680976},
@@ -56,7 +56,9 @@
   {"id": "2630385", "title": "2027 코리아그랜드세일", "start": "2026-12-23", "end": "2027-02-13", "addr": "서울특별시 중구 명동길 14 (명동2가)", "sido": "서울", "image": "https://tong.visitkorea.or.kr/cms/resource/66/4113266_image2_1.jpg", "tel": "1644-7855", "mapx": 126.982887725, "mapy": 37.5634116488},
   {"id": "2933428", "title": "울산 성남동 눈꽃축제", "start": "2026-12-24", "end": "2026-12-27", "addr": "울산광역시 중구 젊음의거리 15 (성남동) 젊음의거리 일원", "sido": "울산", "image": "https://tong.visitkorea.or.kr/cms/resource/64/3586264_image2_1.jpg", "tel": "010-4825-0560", "mapx": 129.3173082015, "mapy": 35.5535380301},
   {"id": "2641128", "title": "수성빛예술제", "start": "2026-12-24", "end": "2027-01-03", "addr": "대구광역시 수성구 무학로 112 (두산동) 수성못", "sido": "대구", "image": "https://tong.visitkorea.or.kr/cms/resource/58/4173758_image2_1.JPG", "tel": "053-668-1504", "mapx": 128.6205782501, "mapy": 35.8293753137},
+  {"id": "2802702", "title": "포천백운계곡 동장군축제", "start": "2026-12-24", "end": "2027-02-09", "addr": "경기도 포천시 이동면 포화로 259 백운계곡관광단지", "sido": "경기", "image": "https://tong.visitkorea.or.kr/cms/resource/21/3580521_image2_1.jpg", "tel": "031-536-9917", "mapx": 127.4120415644, "mapy": 38.0734785425},
   {"id": "3049823", "title": "제4회 겨울엔 양평", "start": "2026-12-31", "end": "2026-12-31", "addr": "경기도 양평군 양평읍 양평시장길 11-1", "sido": "경기", "image": "https://tong.visitkorea.or.kr/cms/resource/63/4173763_image2_1.jpg", "tel": "031-770-1072", "mapx": 127.4920824556, "mapy": 37.4898308439},
+  {"id": "674023", "title": "정미년 해맞이 행사 with 주문진 도깨비 불꽃 축제", "start": "2026-12-31", "end": "2027-01-01", "addr": "강원특별자치도 강릉시 경포로 515 (안현동) 주문진 도깨비 방파제, 경포해변, 정동진 모래시계공원", "sido": "강원", "image": "https://tong.visitkorea.or.kr/cms/resource/77/4175077_image2_1.jpg", "tel": "033-640-5130", "mapx": 128.9067457491, "mapy": 37.8052239456},
   {"id": "3420072", "title": "2027 선양 맨몸마라톤", "start": "2027-01-01", "end": "2027-01-01", "addr": "대전광역시 유성구 대덕대로 480 (도룡동)", "sido": "대전", "image": "https://tong.visitkorea.or.kr/cms/resource/49/4169049_image2_1.jpg", "tel": "042-580-1827", "mapx": 127.3797537407, "mapy": 36.3760605845},
   {"id": "386053", "title": "평창송어축제", "start": "2027-01-01", "end": "2027-01-31", "addr": "강원특별자치도 평창군 진부면 경강로 3562", "sido": "강원", "image": "https://tong.visitkorea.or.kr/cms/resource/81/4002581_image2_1.jpg", "tel": "033-336-4000", "mapx": 128.5569912325, "mapy": 37.633179513},
   {"id": "507599", "title": "얼음나라화천 산천어축제", "start": "2027-01-09", "end": "2027-01-31", "addr": "강원특별자치도 화천군 화천읍 산천어길 137", "sido": "강원", "image": "https://tong.visitkorea.or.kr/cms/resource/46/4071246_image2_1.jpg", "tel": "1688-3005", "mapx": 127.7098811689, "mapy": 38.1126243028},
