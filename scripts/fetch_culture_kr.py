@@ -12,6 +12,7 @@
 키는 URL 에 들어가므로 URL·키는 어디에도 출력하지 않는다. 대신 serviceTp 마다 응답의 '구조'(태그 이름만)를 한 번 출력한다.
 """
 import argparse
+import html
 import hashlib
 import importlib.util
 import math
@@ -39,6 +40,8 @@ RETRY_DELAY = 2
 MAX_PAGES = 30                     # serviceTp 마다
 KEEP_AHEAD_DAYS = 120
 MAX_SPAN_DAYS = 365
+# 행사가 아닌 공고(대관·입주작가 모집 등)는 제외
+NOT_EVENT = re.compile(r'대관\s*(모집|공고)|(입주작가|작가).{0,12}(모집|공모)|정기\s*공모|\[공모\]')
 DEFAULT_OUT = os.path.join(os.path.dirname(HERE), 'data', 'culture_kr.json')
 
 # 필드 별칭 (모두 소문자)
@@ -171,7 +174,7 @@ def make_id(f, title, start, place):
 
 def map_item(f, tp):
     """소문자 키 dict -> 앱 형식. 제목/시작일이 없으면 None."""
-    title = pick(f, 'title')
+    title = html.unescape(pick(f, 'title') or '').strip()
     start = fmt_date(pick(f, 'start'))
     if not title or not start:
         return None
@@ -382,6 +385,8 @@ def build_items(rows, today):
             continue
         st, en = date.fromisoformat(m['start']), date.fromisoformat(m['end'])
         if en < today or st > limit or (en - st).days > MAX_SPAN_DAYS:
+            continue
+        if NOT_EVENT.search(m['title']):
             continue
         seen.add(m['id'])
         out.append(m)
