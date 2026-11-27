@@ -37,6 +37,8 @@ h2 small{font-weight:500;color:var(--sub);font-size:14px}
 .badge{font-size:12px;font-weight:700;padding:1px 8px;border-radius:10px;background:var(--accent-bg);color:var(--accent)}
 .badge.end{background:#fde8e1;color:#c2410c}
 .badge.soon{background:#e8f1fb;color:#2b6cb0}
+.badge.free{background:#e6f4ea;color:#2f8a56}
+.badge.now{background:#fff3d6;color:#8a5a00}
 .badge.done{background:#e6f4ea;color:#2f8a56}
 .empty{text-align:center;color:var(--sub);padding:40px 12px}
 .empty .big{font-size:44px}

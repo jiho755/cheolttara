@@ -113,6 +113,10 @@ function setBucket(id, on) {
       const f = FESTBYID[id.slice(5)];
       if (f) Object.assign(b, { title: f.title, start: f.start, end: f.end, addr: f.addr, sido: f.sido });
     }
+    if (id.startsWith('seoul-')) { // 서울 문화행사도 같은 방식
+      const c = CULTBYID[id];
+      if (c) Object.assign(b, { title: c.title, start: c.start, end: c.end, place: c.place, gu: c.gu });
+    }
     store.bucket.set(id, b);
     idbOp('bucket', (s) => s.put(b));
   } else {
@@ -133,6 +137,10 @@ let PLACEBYID = {};
 let FESTS = [];
 let FESTBYID = {};
 let FEST_META = { updated: null, source: '' };
+let CULT = [];          // 서울 문화행사 중 공연·전시·체험 등 (festival 그룹 제외)
+let CULTBYID = {};      // festival 그룹 포함 전체
+let SEOUL_FESTS = [];   // 축제·행사 섹션에 합쳐지는 서울 festival 그룹
+let CULT_META = { updated: null, source: '' };
 const REGIONS = [
   ['전체', null],
   ['수도권', ['서울', '경기', '인천']],
@@ -142,8 +150,8 @@ const REGIONS = [
   ['경상', ['부산', '대구', '울산', '경북', '경남']],
   ['제주', ['제주']],
 ];
-const FEST_PAGE = 10, KEEP_DAYS = 180;
-const ui = { tab: 'home', mi: 0, region: '전체', festLimit: FEST_PAGE, year: YEAR };
+const FEST_PAGE = 10, KEEP_DAYS = 180, CULT_PAGE = 8;
+const ui = { tab: 'home', mi: 0, region: '전체', festLimit: FEST_PAGE, cultFilter: 'rec', cultLimit: CULT_PAGE, year: YEAR };
 const CATS = { food: '🍓 음식', nature: '🌸 자연', event: '🎉 행사' };
 
 const $ = (s, r) => (r || document).querySelector(s);
@@ -179,7 +187,7 @@ function inMonth(it, m) {
 }
 
 // ---------- 종류별 정보 (카드·버킷·알림 공통) ----------
-const kindOf = (id) => (id.startsWith('fest-') ? 'fest' : id.startsWith('place-') ? 'place' : 'item');
+const kindOf = (id) => (id.startsWith('fest-') ? 'fest' : id.startsWith('seoul-') ? 'seoul' : id.startsWith('place-') ? 'place' : 'item');
 function festFor(id) {
   const cid = id.slice(5);
   if (FESTBYID[cid]) return FESTBYID[cid];
@@ -242,8 +250,28 @@ function festInfo(f, timing) {
   return { id: 'fest-' + f.id, kind: 'fest', emoji: '🎉', thumb: f.image || '', name: f.title, sum: '', meta: [range, [place, tail].filter(Boolean).join(' · ')].filter(Boolean),
     extra: '', badges: b + doneBadge('fest-' + f.id), state, d, period: range };
 }
+// 서울 문화행사 (공연·전시·체험·축제)
+function cultFor(id) {
+  if (CULTBYID[id]) return CULTBYID[id];
+  const b = store.bucket.get(id) || {};
+  const r = [...store.records.values()].find((x) => x.id === id) || {};
+  const title = b.title || r.title;
+  if (!title) return null;
+  return { id, title, start: b.start || '', end: b.end || '', gu: b.gu || '', place: b.place || '', group: 'etc', cat: '', target: '', fee: '', free: false, time: '', image: '', link: '', lat: null, lng: null };
+}
+function cultInfo(c) {
+  const base = festInfo({ id: c.id, title: c.title, start: c.start, end: c.end, addr: '', sido: '', image: c.image }, false);
+  let b = '';
+  if (c.free) b += '<span class="badge free">무료</span>';
+  if (base.state === 'now') b += base.d <= 7 ? '<span class="badge end">곧 끝나요</span>' : '<span class="badge now">진행 중</span>';
+  else if (base.state === 'soon' || base.state === 'upcoming') b += '<span class="badge soon">D-' + base.d + '</span>';
+  const where = [c.gu, c.place].filter(Boolean).join(' · ');
+  return { id: c.id, kind: 'seoul', emoji: c.group === 'festival' ? '🎉' : '🎭', thumb: c.image || '', name: c.title, sum: '',
+    meta: [where, base.period].filter(Boolean), extra: '', badges: b + doneBadge(c.id), state: base.state, d: base.d, period: base.period };
+}
 function infoOf(id, timing) {
   const k = kindOf(id);
+  if (k === 'seoul') { const c = cultFor(id); return c ? cultInfo(c) : null; }
   if (k === 'fest') { const f = festFor(id); return f ? festInfo(f, timing) : null; }
   if (k === 'place') { const p = PLACEBYID[id]; return p ? placeInfo(p, timing) : null; }
   const it = BYID[id];
@@ -276,15 +304,43 @@ function regionOk(sido) {
   return !r || !r[1] || r[1].includes(sido);
 }
 function festsOfMonth(mo) {
-  return FESTS.filter((f) => f._s <= mo.last && f._e >= mo.first && regionOk(f.sido))
+  return FESTS.concat(SEOUL_FESTS).filter((f) => f._s <= mo.last && f._e >= mo.first && regionOk(f.sido))
     .sort((a, b) => {
       const oa = a._s <= TODAY && a._e >= TODAY ? 0 : 1, ob = b._s <= TODAY && b._e >= TODAY ? 0 : 1;
       return oa - ob || a._s - b._s || a.title.localeCompare(b.title, 'ko');
     });
 }
-function updatedText() {
-  const m = /^\d{4}-(\d{2})-(\d{2})/.exec(FEST_META.updated || '');
+function updatedText(meta) {
+  const m = /^\d{4}-(\d{2})-(\d{2})/.exec((meta || FEST_META).updated || '');
   return m ? +m[1] + '/' + +m[2] : '아직 없음';
+}
+const CULT_FILTERS = [['rec', '추천'], ['free', '무료'], ['exhibit', '전시'], ['show', '공연'], ['experience', '체험'], ['kids', '아이와 함께']];
+const KIDS_RE = /어린이|아동|가족|유아|초등|누구나|전체/;
+function cultSection(mo) { return CULT.filter((c) => c._s <= mo.last && c._e >= mo.first); }
+function cultList(mo) {
+  const f = ui.cultFilter;
+  const list = cultSection(mo).filter((c) => f === 'free' ? c.free : f === 'kids' ? KIDS_RE.test(c.target || '') : (f === 'exhibit' || f === 'show' || f === 'experience') ? c.group === f : true);
+  const inMo = (d) => d >= mo.first && d <= mo.last;
+  const rank = (c) => [c.free ? 0 : 1, inMo(c._s) || inMo(c._e) ? 0 : 1, diffDays(c._e, c._s)];
+  return list.sort((a, b) => {
+    const ra = rank(a), rb = rank(b);
+    return ra[0] - rb[0] || ra[1] - rb[1] || ra[2] - rb[2] || a._s - b._s || a.title.localeCompare(b.title, 'ko');
+  });
+}
+function cultureSection(mo) {
+  const r = REGIONS.find((x) => x[0] === ui.region);
+  if (!CULT.length || (ui.region !== '전체' && ui.region !== '수도권') || !r) return '';
+  const list = cultList(mo);
+  let h = `<section data-sec="culture"><h2>🎭 공연·전시 <small>서울</small></h2>
+    <div class="chips cfilters" role="group" aria-label="공연·전시 필터">` + CULT_FILTERS.map(([k, n]) =>
+    `<button class="chip cchip" data-cfilter="${k}" aria-pressed="${k === ui.cultFilter}">${n}</button>`).join('') + '</div>';
+  if (list.length) {
+    h += list.slice(0, ui.cultLimit).map((c) => infoCard(cultInfo(c))).join('');
+    if (list.length > ui.cultLimit) h += `<button class="btn ghost block" id="cultMore" style="margin-bottom:10px">더 보기 (${list.length - ui.cultLimit}개)</button>`;
+  } else {
+    h += '<div class="note" data-testid="cultEmpty">이 조건에 맞는 공연·전시가 이 달에는 없어요.</div>';
+  }
+  return h + '</section>';
 }
 function viewHome() {
   const months = monthList(), mo = months[ui.mi] || months[0], timing = ui.mi === 0;
@@ -298,16 +354,19 @@ function viewHome() {
   const events = ITEMS.filter((it) => it.category === 'event' && inMonth(it, mo.m));
   h += `<section data-sec="fest"><h2>🎉 축제·행사 <small>${fests.length}개</small></h2>`;
   if (fests.length) {
-    h += fests.slice(0, ui.festLimit).map((f) => infoCard(festInfo(f, timing))).join('');
+    h += fests.slice(0, ui.festLimit).map((f) => infoCard(f._seoul ? cultInfo(f) : festInfo(f, timing))).join('');
     if (fests.length > ui.festLimit) h += `<button class="btn ghost block" id="festMore" style="margin-bottom:10px">더 보기 (${fests.length - ui.festLimit}개)</button>`;
   } else {
     const far = mo.first > addDays(TODAY, KEEP_DAYS);
-    h += (FESTS.length && !far && ui.region !== '전체')
+    h += ((FESTS.length || SEOUL_FESTS.length) && !far && ui.region !== '전체')
       ? '<div class="note" data-testid="festEmpty">이 지역에는 이 달에 확인된 축제가 아직 없어요. 다른 지역도 눌러 보세요.</div>'
       : '<div class="note" data-testid="festEmpty">축제 일정은 보통 1~2달 전에 확정돼요. 가까워지면 자동으로 채워져요.</div>';
   }
   if (events.length) h += `<h3 class="subh">절기·세시풍속</h3>` + events.map((it) => infoCard(seasonalInfo(it, timing))).join('');
   h += '</section>';
+
+  // 1-2. 공연·전시 (서울 데이터뿐이므로 전체·수도권에서만)
+  h += cultureSection(mo);
 
   // 2. 가볼 만한 곳
   const places = PLACES.filter((p) => p.months.includes(mo.m) && regionOk(p.sido)).sort((a, b) => a.name.localeCompare(b.name, 'ko'));
@@ -318,7 +377,7 @@ function viewHome() {
   const natures = ITEMS.filter((it) => it.category === 'nature' && inMonth(it, mo.m));
   if (foods.length) h += `<section data-sec="food"><h2>🍓 제철 음식 <small>${foods.length}개</small></h2>` + foods.map((it) => infoCard(seasonalInfo(it, timing))).join('') + '</section>';
   if (natures.length) h += `<section data-sec="nature"><h2>🌸 자연 <small>${natures.length}개</small></h2>` + natures.map((it) => infoCard(seasonalInfo(it, timing))).join('') + '</section>';
-  h += `<p class="foot" id="festFoot">축제 정보 업데이트: ${esc(updatedText())} · 자료: 한국관광공사</p>`;
+  h += `<p class="foot" id="festFoot">축제 ${esc(updatedText(FEST_META))} · 공연·전시 ${esc(updatedText(CULT_META))} · 자료: 한국관광공사, 서울특별시</p>`;
   return h;
 }
 
@@ -376,7 +435,7 @@ function viewStamps() {
   h += `<section class="board visited" data-visited-board="1"><h3>다녀온 곳 <span class="prog">${visited.length}곳</span></h3>`;
   h += visited.length
     ? '<div class="grid">' + visited.map((r) => {
-      const info = infoOf(r.id, false), nm = info ? info.name : (r.title || r.id), em = info ? info.emoji : (kindOf(r.id) === 'fest' ? '🎉' : '📍');
+      const info = infoOf(r.id, false), nm = info ? info.name : (r.title || r.id), em = info ? info.emoji : (kindOf(r.id) === 'fest' ? '🎉' : kindOf(r.id) === 'seoul' ? '🎭' : '📍');
       return `<button class="stamp on" data-open="${esc(r.id)}" aria-label="${esc(nm)} 도장 찍음"><span class="circ">${em}</span><span class="nm">${esc(nm)}</span></button>`;
     }).join('') + '</div>'
     : '<div class="empty" style="padding:14px 6px">아직 다녀온 곳이 없어요.<br>명소나 축제에서 ‘해냈어요’를 눌러 보세요.</div>';
@@ -395,7 +454,7 @@ function alertList() {
     if (info.kind === 'item') {
       if (info.state === 'now' && info.d <= 14 && !done) out.push({ info, kind: 'end', d: info.d });
       else if (info.state === 'soon') out.push({ info, kind: 'start', d: info.d });
-    } else if (info.kind === 'fest') {
+    } else if (info.kind === 'fest' || info.kind === 'seoul') {
       if (info.state === 'now' && info.d <= FEST_ALERT_DAYS && !done) out.push({ info, kind: 'end', d: info.d });
       else if (info.state === 'soon' && info.d <= FEST_ALERT_DAYS) out.push({ info, kind: 'start', d: info.d });
     }
@@ -499,6 +558,20 @@ function festSheet(id) {
     row('주소', esc(f.addr)) + telRow(f.tel);
   entrySheet(info, body, mapBtn(f.title), '자료: 한국관광공사');
 }
+const safeUrl = (u) => (/^https?:\/\//i.test(u || '') ? u : '');
+function seoulSheet(id) {
+  const c = cultFor(id); if (!c) return;
+  const info = cultInfo(c), s = parseYmd(c.start), e = parseYmd(c.end);
+  const range = s ? c.start + (e && c.end !== c.start ? ' ~ ' + c.end : '') : '';
+  const link = safeUrl(c.link);
+  const body = (c.image ? `<img class="hero" src="${esc(c.image)}" loading="lazy" alt="" data-fallback="">` : '') +
+    row('분류', esc(c.cat)) +
+    row('기간', esc(range) + (info.state === 'now' ? ' · 진행 중' : info.state === 'past' ? ' · 종료' : s ? ' · D-' + info.d : '')) +
+    row('시간', esc(c.time)) + row('장소', esc([c.place, c.gu && '(' + c.gu + ')'].filter(Boolean).join(' '))) +
+    row('대상', esc(c.target)) + row('요금', esc(c.fee || (c.free ? '무료' : '')));
+  const linkBtn = link ? `<a class="btn ghost" id="sheetLink" href="${esc(link)}" target="_blank" rel="noopener noreferrer">자세히 보기</a>` : '';
+  entrySheet(info, body, linkBtn + mapBtn(c.place || c.title || c.gu), '자료: 서울특별시(공공누리 제1유형)');
+}
 function placeSheet(id) {
   const p = PLACEBYID[id]; if (!p) return;
   const info = placeInfo(p, true);
@@ -522,7 +595,7 @@ function itemSheet(id) {
 }
 function detailSheet(id) {
   const k = kindOf(id);
-  if (k === 'fest') festSheet(id); else if (k === 'place') placeSheet(id); else itemSheet(id);
+  if (k === 'fest') festSheet(id); else if (k === 'seoul') seoulSheet(id); else if (k === 'place') placeSheet(id); else itemSheet(id);
 }
 
 // 사진 리사이즈 (최대 1000px JPEG)
@@ -588,7 +661,7 @@ async function renderCard(year) {
   const g = c.getContext('2d'), acc = ACCENTS[seasonOfMonth(TODAY.getMonth() + 1)];
   const recs = [...store.records.values()].filter((r) => r.year === year && (BYID[r.id] || kindOf(r.id) !== 'item'))
     .sort((a, b) => a.date.localeCompare(b.date));
-  const recEmoji = (r) => (BYID[r.id] ? BYID[r.id].emoji : kindOf(r.id) === 'fest' ? '🎉' : '📍');
+  const recEmoji = (r) => (BYID[r.id] ? BYID[r.id].emoji : kindOf(r.id) === 'fest' ? '🎉' : kindOf(r.id) === 'seoul' ? '🎭' : '📍');
   const seasonalDone = recs.filter((r) => BYID[r.id]).length, visitedN = recs.length - seasonalDone;
   g.fillStyle = '#fbf8f3'; g.fillRect(0, 0, W, H);
   g.fillStyle = acc; g.fillRect(0, 0, W, 14);
@@ -669,8 +742,10 @@ function bind() {
     const t = e.target.closest('button,select'); if (!t) return;
     const d = t.dataset;
     if (d.tab) { ui.tab = d.tab; closeSheet(); render(); window.scrollTo(0, 0); }
-    else if (d.month !== undefined) { ui.mi = +d.month; ui.festLimit = FEST_PAGE; render(); }
-    else if (d.region) { ui.region = d.region; lsSet('region', d.region); ui.festLimit = FEST_PAGE; render(); }
+    else if (d.month !== undefined) { ui.mi = +d.month; ui.festLimit = FEST_PAGE; ui.cultLimit = CULT_PAGE; render(); }
+    else if (d.region) { ui.region = d.region; lsSet('region', d.region); ui.festLimit = FEST_PAGE; ui.cultLimit = CULT_PAGE; render(); }
+    else if (d.cfilter) { ui.cultFilter = d.cfilter; ui.cultLimit = CULT_PAGE; render(); }
+    else if (t.id === 'cultMore') { ui.cultLimit += CULT_PAGE; render(); }
     else if (t.id === 'festMore') { ui.festLimit += FEST_PAGE; render(); }
     else if (d.heart) {
       const on = !store.bucket.has(d.heart); setBucket(d.heart, on); render();
@@ -698,6 +773,25 @@ async function loadJson(url, def) {
     return await res.json();
   } catch (e) { return def; }
 }
+// 서울 문화행사: 첫 화면을 막지 않도록 렌더 뒤에 불러와 채운다 (실패·빈 파일이어도 앱은 그대로)
+const normTitle = (t) => String(t || '').toLowerCase().replace(/[^0-9a-z가-힣]/g, '');
+async function loadCulture() {
+  const cj = await loadJson('data/culture_seoul.json', {});
+  CULT_META = { updated: (cj && cj.updated) || null, source: (cj && cj.source) || '' };
+  const all = ((cj && Array.isArray(cj.items)) ? cj.items : []).filter((c) => c && c.id && c.title)
+    .map((c) => ({ ...c, id: String(c.id), _s: parseYmd(c.start), _e: parseYmd(c.end) || parseYmd(c.start) })).filter((c) => c._s);
+  const tour = new Set(FESTS.map((f) => normTitle(f.title)));
+  const seen = new Set();
+  CULT = []; SEOUL_FESTS = []; CULTBYID = {};
+  all.forEach((c) => {
+    if (seen.has(c.id)) return;
+    if (c.group === 'festival') {
+      if (tour.has(normTitle(c.title))) return;   // 관광공사 축제와 같은 제목이면 서울 항목은 버린다
+      seen.add(c.id); SEOUL_FESTS.push({ ...c, sido: '서울', addr: [c.gu, c.place].filter(Boolean).join(' '), _seoul: true });
+    } else { seen.add(c.id); CULT.push(c); }
+    CULTBYID[c.id] = c;
+  });
+}
 async function init() {
   bind();
   try {
@@ -724,6 +818,7 @@ async function init() {
   document.body.dataset.ready = '1';
   if (!store.persistent) toast('저장소를 쓸 수 없어 이번 방문에만 기억해요');
   notifyOnOpen();
+  loadCulture().then(() => { if (CULT.length || SEOUL_FESTS.length || CULT_META.updated) { render(); document.body.dataset.culture = '1'; } }).catch(() => {});
   try { if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {}); } catch (e) {}
 }
 init();
