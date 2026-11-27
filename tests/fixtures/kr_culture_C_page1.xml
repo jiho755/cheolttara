@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response>
+ <header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header>
+ <body>
+  <items>
+   <item><seq>3001</seq><title>도자기 만들기 체험</title><startDate>20261120</startDate><endDate>20261220</endDate><place>대전 도예원</place><realmName>교육/체험</realmName><area>대전</area><sigungu>유성구</sigungu><thumbnail/><gpsX>127.3500</gpsX><gpsY>36.3600</gpsY></item>
+   <item><seq>3002</seq><title>주말 교실</title><startDate>20261125</startDate><endDate>20261226</endDate><place>천안 문화원</place><realmName>기타</realmName><area>충청남도</area><sigungu>천안시</sigungu><thumbnail/><gpsX/><gpsY/></item>
+  </items>
+  <numOfrows>100</numOfrows><PageNo>1</PageNo><totalCount>2</totalCount>
+ </body>
+</response>

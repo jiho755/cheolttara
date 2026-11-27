@@ -10,7 +10,7 @@
 
 ## 구조
 - 프레임워크·빌드 없음 (HTML/CSS/JS), 오프라인 동작 (service worker)
-- 데이터: `data/seasonal_items.json` (명세: `docs/DATA_SPEC.md`), `data/places.json` (큐레이션 명소), `data/festivals.json`·`data/culture_seoul.json` (자동 생성, 손으로 수정 금지)
+- 데이터: `data/seasonal_items.json` (명세: `docs/DATA_SPEC.md`), `data/places.json` (큐레이션 명소), `data/festivals.json`·`data/culture_seoul.json`·`data/culture_kr.json` (자동 생성, 손으로 수정 금지)
 - v3 명세: `docs/SPEC_V3_CULTURE.md`
 - v2 명세: `docs/SPEC_V2.md`
 - 기록은 기기 안(IndexedDB)에만 저장
@@ -26,11 +26,18 @@
 - 로컬 실행: `TOUR_API_KEY=... python3 scripts/fetch_festivals.py` / 네트워크 없이: `python3 scripts/fetch_festivals.py --fixture tests/fixtures/searchFestival2_page1.json --out /tmp/f.json`
 
 ## 공연·전시 데이터 (서울특별시)
-서울 열린데이터광장 '서울시 문화행사 정보'(`culturalEventInfo`)로 공연·전시·체험(민간 포함)을 보강합니다. 자료: 서울특별시 (공공누리 제1유형). 화면의 🎭 공연·전시 섹션은 지역 칩이 전체·수도권일 때만 보이고, 서울 축제는 🎉 축제·행사에 합쳐집니다. 명세: `docs/SPEC_V3_CULTURE.md`
+서울 열린데이터광장 '서울시 문화행사 정보'(`culturalEventInfo`)로 공연·전시·체험(민간 포함)을 보강합니다. 자료: 서울특별시 (공공누리 제1유형). 서울·전국 자료는 🎭 공연·전시 한 섹션에 합쳐지고(지역 칩은 시·도 기준, 해당 지역·달에 항목이 없으면 섹션 숨김), 축제 성격의 항목은 🎉 축제·행사에 합쳐집니다. 출처가 겹치면 제목(정규화)+시작일이 같은 항목은 관광공사 > 서울 > 전국 순으로 하나만 남깁니다. 명세: `docs/SPEC_V3_CULTURE.md`
 
 - `scripts/fetch_culture_seoul.py` (표준 라이브러리만)가 `data/culture_seoul.json` 을 만듭니다. 실패·0건이면 기존 파일을 유지하고 종료코드 1. 키가 URL 에 들어가므로 URL 은 로그에 출력하지 않습니다.
 - 준비: 저장소 Settings > Secrets and variables > Actions 에 `SEOUL_API_KEY`(서울 열린데이터광장 인증키)를 등록하세요.
 - 로컬 실행: `SEOUL_API_KEY=... python3 scripts/fetch_culture_seoul.py` / 네트워크 없이: `python3 scripts/fetch_culture_seoul.py --fixture tests/fixtures/seoul_culture_page1.json --out /tmp/c.json`
+
+## 공연·전시 데이터 (전국, 한국문화정보원)
+공공데이터포털 '한국문화정보원_한눈에보는문화정보조회서비스'(15138937, `B553457/cultureinfo/period2`, XML)로 전국 공연·전시·행사·교육/체험을 보강합니다. 자료: 한국문화정보원.
+
+- `scripts/fetch_culture_kr.py` (표준 라이브러리만)가 serviceTp A(공연/전시)·B(행사/축제)·C(교육/체험)를 100건씩 쪽 넘김으로 받아(오늘~+120일) `data/culture_kr.json` 을 만듭니다. 실패·0건이면 기존 파일을 유지하고 종료코드 1. 응답 요소 이름을 대소문자·별칭으로 관대하게 읽고, 실행할 때마다 serviceTp 별 응답 **구조**(태그 이름·HTTP 상태, 값 없음)를 로그에 출력합니다. 키·URL 은 출력하지 않습니다.
+- 키: 축제와 같은 `TOUR_API_KEY`(Decoding 키)를 쓰며, 이 키로 해당 서비스 활용 신청(승인)이 돼 있어야 합니다. 워크플로 "Fetch culture events (nationwide)" step 이 실행합니다.
+- 로컬: `TOUR_API_KEY=... python3 scripts/fetch_culture_kr.py` (`--diagnose` 는 첫 쪽만 받아 구조만 출력) / 네트워크 없이: `python3 scripts/fetch_culture_kr.py --fixture A=tests/fixtures/kr_culture_A_page1.xml --out /tmp/k.json`
 
 ## 앱(APK)
 사이트(https://jiho755.github.io/cheolttara/)를 WebView 로 감싼 최소 Android 앱이 `android/` 에 있습니다. (AndroidX·Kotlin 없음, 순수 프레임워크 API)
@@ -46,4 +53,5 @@
 cd /tmp && python3 -I /path/to/tests/test.py        # UI (Playwright, 390x844)
 python3 -I /path/to/tests/test_fetch.py             # 축제 수집 스크립트 (네트워크 없음)
 python3 -I /path/to/tests/test_fetch_culture.py     # 서울 문화행사 수집 스크립트 (네트워크 없음)
+python3 -I /path/to/tests/test_fetch_culture_kr.py  # 전국 문화행사 수집 스크립트 (네트워크 없음)
 ```

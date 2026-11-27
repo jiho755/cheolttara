@@ -32,9 +32,16 @@ jobs:
           SEOUL_API_KEY: ${{ secrets.SEOUL_API_KEY }}
         run: python3 scripts/fetch_culture_seoul.py
 
+      - name: Fetch culture events (nationwide)
+        id: culture_kr
+        continue-on-error: true
+        env:
+          TOUR_API_KEY: ${{ secrets.TOUR_API_KEY }}
+        run: python3 scripts/fetch_culture_kr.py
+
       - name: Commit and push if changed
         run: |
-          FILES="data/festivals.json data/culture_seoul.json"
+          FILES="data/festivals.json data/culture_seoul.json data/culture_kr.json"
           if git diff --quiet -- $FILES; then
             echo "No changes"
             exit 0
@@ -47,7 +54,7 @@ jobs:
 
       # 커밋이 끝난 뒤에 실패를 표시해서 Actions 탭에서 알아챌 수 있게 한다
       - name: Fail if any fetch step failed
-        if: steps.festivals.outcome == 'failure' || steps.culture.outcome == 'failure'
+        if: steps.festivals.outcome == 'failure' || steps.culture.outcome == 'failure' || steps.culture_kr.outcome == 'failure'
         run: |
-          echo "festivals: ${{ steps.festivals.outcome }}, culture: ${{ steps.culture.outcome }}"
+          echo "festivals: ${{ steps.festivals.outcome }}, culture: ${{ steps.culture.outcome }}, culture_kr: ${{ steps.culture_kr.outcome }}"
           exit 1

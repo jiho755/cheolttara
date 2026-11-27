@@ -1,10 +1,11 @@
 """철따라 v2 UI 테스트 (Playwright, 390x844). 실행: python3 tests/test.py
 
 - 저장소를 임시 폴더로 복사하고, tests/fixtures 로 scripts/fetch_festivals.py 를 돌려 만든 축제 데이터를 넣어 서빙한다 (포트 8765).
-- 8765: 축제 데이터만 있는 사본 (data/culture_seoul.json 은 커밋된 빈 초기값 그대로 -> 공연·전시 섹션 숨김).
+- 8765: 축제 데이터만 있는 사본 (culture_seoul.json·culture_kr.json 은 빈 초기값으로 덮어씀 -> 공연·전시 섹션 숨김).
 - 8767: 위 사본 + tests/fixtures/seoul_culture_*.json 으로 scripts/fetch_culture_seoul.py 를 돌려 만든 서울 문화행사 데이터.
 - 8766: 축제·문화행사 모두 빈 초기 객체인 사본 ('축제 없음' 상태 확인).
-- 끝나면 원본 data/festivals.json, data/culture_seoul.json 이 바뀌지 않았는지 확인하고, culture_seoul.json 은 빈 초기 객체여야 한다.
+- 8768: 8767 사본 + tests/fixtures/kr_culture_*.xml 로 scripts/fetch_culture_kr.py 를 돌려 만든 전국 문화행사 데이터.
+- 끝나면 원본 data/festivals.json, data/culture_seoul.json, data/culture_kr.json 이 바뀌지 않았는지 확인하고, culture_kr.json 은 빈 초기 객체여야 한다.
 """
 import base64
 import re
@@ -26,12 +27,16 @@ OUT = os.path.join(ROOT, 'screens') + '/'
 os.makedirs(OUT, exist_ok=True)
 FEST_PATH = os.path.join(ROOT, 'data', 'festivals.json')
 CULT_PATH = os.path.join(ROOT, 'data', 'culture_seoul.json')
+KR_PATH = os.path.join(ROOT, 'data', 'culture_kr.json')
 EMPTY_FESTIVALS = {"updated": None, "source": "한국관광공사 TourAPI", "items": []}
 EMPTY_CULTURE = {"updated": None, "source": "서울특별시 문화행사 정보 (공공누리 제1유형)", "items": []}
 with open(FEST_PATH, encoding='utf-8') as f:
     ORIGINAL_FEST = f.read()
+EMPTY_KR = {"updated": None, "source": "한국문화정보원 한눈에보는문화정보", "items": []}
 with open(CULT_PATH, encoding='utf-8') as f:
     ORIGINAL_CULT = f.read()
+with open(KR_PATH, encoding='utf-8') as f:
+    ORIGINAL_KR = f.read()
 
 # ---- 임시 사본 + 픽스처로 축제 데이터 생성
 TMP = tempfile.mkdtemp(prefix='cheolttara-test-')
@@ -45,6 +50,9 @@ assert rc == 0, 'fixture festivals generation failed'
 with open(os.path.join(SITE, 'data', 'festivals.json'), encoding='utf-8') as f:
     FEST = json.load(f)
 assert len(FEST['items']) == 17
+for _p, _o in (('culture_seoul.json', EMPTY_CULTURE), ('culture_kr.json', EMPTY_KR)):   # 실제 파일은 자동 갱신되므로 사본은 빈 초기값으로 고정
+    with open(os.path.join(SITE, 'data', _p), 'w', encoding='utf-8') as f:
+        json.dump(_o, f, ensure_ascii=False)
 
 SITE_C = os.path.join(TMP, 'site_culture')      # 축제 + 서울 문화행사
 shutil.copytree(SITE, SITE_C)
@@ -55,8 +63,16 @@ assert rc == 0, 'fixture culture generation failed'
 with open(os.path.join(SITE_C, 'data', 'culture_seoul.json'), encoding='utf-8') as f:
     CULT = json.load(f)
 assert len(CULT['items']) == 21
-with open(os.path.join(SITE, 'data', 'culture_seoul.json'), encoding='utf-8') as f:
-    assert json.load(f) == EMPTY_CULTURE, 'site A must keep the committed empty culture file'
+SITE_K = os.path.join(TMP, 'site_kr')           # 축제 + 서울 + 전국 문화행사
+shutil.copytree(SITE_C, SITE_K)
+KRF = lambda n: os.path.join(FIX, n)
+rc = subprocess.call([sys.executable, '-I', os.path.join(ROOT, 'scripts', 'fetch_culture_kr.py'),
+                      '--fixture', 'A=' + KRF('kr_culture_A_page1.xml'), 'A=' + KRF('kr_culture_A_page2.xml'), 'B=' + KRF('kr_culture_B_page1.xml'),
+                      'C=' + KRF('kr_culture_C_page1.xml'), '--today', '2026-11-24', '--out', os.path.join(SITE_K, 'data', 'culture_kr.json')])
+assert rc == 0, 'fixture kr culture generation failed'
+with open(os.path.join(SITE_K, 'data', 'culture_kr.json'), encoding='utf-8') as f:
+    KR = json.load(f)
+assert len(KR['items']) == 12
 SITE_E = os.path.join(TMP, 'site_empty')        # 축제도 비어 있는 사본
 shutil.copytree(SITE, SITE_E)
 with open(os.path.join(SITE_E, 'data', 'festivals.json'), 'w', encoding='utf-8') as f:
@@ -64,9 +80,10 @@ with open(os.path.join(SITE_E, 'data', 'festivals.json'), 'w', encoding='utf-8')
 
 A = 'http://localhost:8765/'   # 축제 데이터 있음, 문화행사 비어 있음
 B = 'http://localhost:8766/'   # 축제·문화행사 모두 비어 있음
-C = 'http://localhost:8767/'   # 축제 + 서울 문화행사
+C = 'http://localhost:8767/'   # 축제 + 서울 문화행사 (전국 파일은 비어 있음)
+K = 'http://localhost:8768/'   # 축제 + 서울 + 전국 문화행사
 srvs = [subprocess.Popen([sys.executable, '-m', 'http.server', str(port), '-d', d], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        for port, d in ((8765, SITE), (8766, SITE_E), (8767, SITE_C))]
+        for port, d in ((8765, SITE), (8766, SITE_E), (8767, SITE_C), (8768, SITE_K))]
 time.sleep(1)
 
 results = []
@@ -85,6 +102,7 @@ def new_page(b, base, date, tag=None, route_items=None):
     ctx.grant_permissions(['notifications'])
     ctx.route('https://tong.visitkorea.or.kr/**', image_route)
     ctx.route('https://culture.seoul.go.kr/**', image_route)
+    ctx.route('https://cdn.example.kr/**', image_route)
     pg = ctx.new_page(); errs = []
     pg.on('console', lambda m, e=errs: e.append(m.text) if m.type == 'error' else None)
     pg.on('pageerror', lambda x, e=errs: e.append(str(x)))
@@ -97,7 +115,7 @@ def new_page(b, base, date, tag=None, route_items=None):
     return ctx, pg, errs, url
 
 def names(pg, sec):
-    sel = ':is([data-open^="fest-"],[data-open^="seoul-"])' if sec == 'fest' else ''
+    sel = ':is([data-open^="fest-"],[data-open^="seoul-"],[data-open^="kc-"])' if sec == 'fest' else ''
     return pg.locator(f'[data-sec={sec}] .card{sel} .name').evaluate_all(
         "els=>els.map(e=>[...e.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join('').trim())")
 def open_ids(pg):
@@ -182,7 +200,7 @@ try:
     check('11/24 festivals in Nov = 5', len(nov) == 5, str(nov))
     check('11/24 ongoing first, then by start', nov[0] in ('인천 차이나타운 겨울 거리', '대구 빛 축제') and nov[-1] in ('부산 불꽃 크리스마스', '춘천 눈꽃 마을 축제'), str(nov))
     check('11/24 한 festival badge 곧 끝나요 (ends in 4 days)', pg.locator('[data-open="fest-141002"] .badge.end').count() == 1)
-    check('11/24 footer: 축제 date, 공연·전시 아직 없음, credits', re.fullmatch(r'축제 \d+/\d+ · 공연·전시 아직 없음 · 자료: 한국관광공사, 서울특별시', pg.inner_text('#festFoot')) is not None, pg.inner_text('#festFoot'))
+    check('11/24 footer: 축제 date, 공연·전시 아직 없음, credits', re.fullmatch(r'축제 \d+/\d+ · 서울 공연·전시 아직 없음 · 전국 공연·전시 아직 없음 · 자료: 한국관광공사, 서울특별시, 한국문화정보원', pg.inner_text('#festFoot')) is not None, pg.inner_text('#festFoot'))
     check('11/24 no 공연·전시 section when culture file is empty', pg.locator('[data-sec=culture]').count() == 0)
     check('11/24 절기·세시풍속 subheading', pg.locator('[data-sec=fest] .subh:has-text("절기·세시풍속")').count() == 1)
     pg.wait_for_timeout(300)
@@ -332,7 +350,7 @@ try:
     pg.click('[data-region="경상"]'); check('region 경상: culture section hidden', pg.locator('[data-sec=culture]').count() == 0)
     pg.click('[data-region="전체"]')
     check('region 전체: culture section back', pg.locator('[data-sec=culture]').count() == 1)
-    check('footer shows both dates and credits', re.fullmatch(r'축제 \d+/\d+ · 공연·전시 \d+/\d+ · 자료: 한국관광공사, 서울특별시', pg.inner_text('#festFoot')) is not None, pg.inner_text('#festFoot'))
+    check('footer shows all dates and credits', re.fullmatch(r'축제 \d+/\d+ · 서울 공연·전시 \d+/\d+ · 전국 공연·전시 아직 없음 · 자료: 한국관광공사, 서울특별시, 한국문화정보원', pg.inner_text('#festFoot')) is not None, pg.inner_text('#festFoot'))
     # 버킷·도장 (서울 항목)
     pg.click('[data-sec=culture] [data-open]:has-text("국악 한마당")'); pg.wait_for_selector('.sheet')
     kid = pg.evaluate("()=>document.querySelector('[data-sec=culture] [data-open]').dataset.open")
@@ -399,6 +417,125 @@ try:
     check('empty culture file: section hidden, no console errors', pg.locator('[data-sec=culture]').count() == 0 and pg.locator('[data-sec=fest] .card').count() > 0 and not errs, str(errs))
     ctx.close()
 
+    # ============ v3.1: 전국 공연·전시 (K 사이트 = 서울 + 전국, 2026-11-24) ============
+    def kr_row_ids(pg, sec):
+        return pg.locator(f'[data-sec={sec}] .card[data-open^="kc-"]').count()
+    ctx, pg, errs, url = new_page(b, K, '2026-11-24')
+    pg.wait_for_selector('body[data-culture="1"]'); pg.wait_for_selector('[data-sec=culture]')
+    check('kr: 전체 label is 전국', pg.inner_text('[data-sec=culture] h2 small') == '전국')
+    check('kr: footer shows all three update dates + credits', re.fullmatch(r'축제 \d+/\d+ · 서울 공연·전시 \d+/\d+ · 전국 공연·전시 \d+/\d+ · 자료: 한국관광공사, 서울특별시, 한국문화정보원', pg.inner_text('#festFoot')) is not None, pg.inner_text('#festFoot'))
+    pg.click('[data-region="강원"]')
+    check('kr: section visible for 강원 with the kr item only', pg.locator('[data-sec=culture]').count() == 1 and cnames(pg) == ['가을 사진전'] and pg.inner_text('[data-sec=culture] h2 small') == '강원', str(cnames(pg)))
+    pg.click('[data-region="충청"]'); check('kr: 충청 shows 대전·천안 items', sorted(cnames(pg)) == ['도자기 만들기 체험', '주말 교실'], str(cnames(pg)))
+    pg.click('[data-region="경상"]'); check('kr: 경상 shows 부산 musical', cnames(pg) == ['뮤지컬 <라이온>'], str(cnames(pg)))
+    pg.click('[data-region="전라"]'); check('kr: section hidden when the region has no items this month', pg.locator('[data-sec=culture]').count() == 0)
+    pg.click('[data-region="제주"]'); check('kr: 제주 hidden in Nov (제주 item starts 12/10)', pg.locator('[data-sec=culture]').count() == 0)
+    pg.click('[data-month="1"]'); check('kr: 제주 shown in Dec', cnames(pg) == ['일련번호 없는 무용'], str(cnames(pg)))
+    pg.click('[data-month="0"]')
+    pg.click('[data-region="수도권"]')
+    sudo = cnames(pg)
+    check('kr: 수도권 mixes seoul and kr (경기 item), 강원 item excluded', '마지막 날 연극' in sudo and '가을 사진전' not in sudo and '뮤지컬 <라이온>' not in sudo and kr_row_ids(pg, 'culture') == 1, str(sudo))
+    pg.click('[data-region="전체"]')
+    # 교차 출처 중복 제거 (제목 정규화 + 시작일)
+    allc = []
+    pg.click('[data-month="1"]')
+    while pg.locator('#cultMore').count(): pg.click('#cultMore')
+    dec = cnames(pg)
+    check('kr dedupe: same title+start as a seoul item is dropped (가을 서울 사진전 once)', dec.count('가을 서울 사진전') == 1 and pg.locator('[data-sec=culture] .card[data-open^="kc-"]', has_text='가을 서울 사진전').count() == 0, str(dec))
+    check('kr dedupe: same title but different start is kept (국악 한마당 seoul 11/28 + kr 12/01; Dec shows the kr one)', dec.count('국악 한마당') == 1 and pg.locator('[data-sec=culture] [data-open^="kc-"]', has_text='국악 한마당').count() == 1 and pg.evaluate("()=>Object.values(CULTBYID).filter(c=>c.title==='국악 한마당').length") == 2, str(dec))
+    check('kr: Dec culture has kr items (kc-)', kr_row_ids(pg, 'culture') >= 3, str(kr_row_ids(pg, 'culture')))
+    pg.click('[data-month="0"]')
+    fn = names(pg, 'fest')
+    check('kr festival-group item merged into 축제·행사 (청주 지역 행사, kc-)', '청주 지역 행사' in fn and pg.locator('[data-sec=fest] [data-open^="kc-"]').count() == 1 and '청주 지역 행사' not in cnames(pg), str(fn))
+    check('kr festival duplicate of tour festival dropped (서울 빛초롱 축제)', fn.count('서울빛초롱축제') == 1 and '서울 빛초롱 축제' not in fn and '서울 빛초롱축제' not in fn, str(fn))
+    pg.click('[data-region="충청"]')
+    check('kr festival respects region chips (충청 -> 청주)', names(pg, 'fest')[0] == '청주 지역 행사' and pg.locator('[data-sec=fest] [data-open^="kc-"]').count() == 1)
+    pg.click('[data-region="강원"]'); check('kr festival hidden in 강원', pg.locator('[data-sec=fest] [data-open^="kc-"]').count() == 0)
+    pg.click('[data-region="전체"]')
+    # 무료 필터는 free null 을 무시
+    pg.click('[data-cfilter=free]')
+    check('kr: 무료 filter ignores free=null items', kr_row_ids(pg, 'culture') == 0 and len(cnames(pg)) == 6, str(cnames(pg)))
+    pg.click('[data-cfilter=rec]')
+    check('kr cards have no 무료 badge', pg.locator('[data-sec=culture] .card[data-open^="kc-"] .badge.free').count() == 0)
+    card = pg.locator('[data-sec=culture] .card[data-open^="kc-"]', has_text='뮤지컬 <라이온>')
+    check('kr card shows "시도 구 · 장소" and period', '부산 해운대구 · 해운대문화회관' in card.inner_text() and '11/20 ~ 11/30' in card.inner_text(), card.inner_text().replace('\n', ' | '))
+    pg.screenshot(path=OUT + 'v31_kr_home.png', full_page=True)
+    # 상세 시트: 비어 있는 행 숨김, 링크는 http(s) 일 때만
+    pg.click('[data-region="강원"]'); pg.click('[data-sec=culture] [data-open^="kc-"]'); pg.wait_for_selector('.sheet')
+    labels = pg.locator('.sheet .row > b').all_inner_texts()
+    st = pg.inner_text('.sheet')
+    check('kr sheet: only filled rows (분류·기간·장소), no 시간/대상/요금', labels == ['분류', '기간', '장소'], str(labels))
+    check('kr sheet: values + credit', '전시' in st and '2026-10-01 ~ 2026-12-31' in st and '춘천미술관 (강원 춘천시)' in st and '자료: 한국문화정보원' in st and '서울특별시' not in st, st.replace('\n', ' | '))
+    lk = pg.locator('.sheet a#sheetLink')
+    check('kr sheet: 자세히 보기 for https link (new tab)', lk.count() == 1 and lk.get_attribute('href') == 'https://www.culture.go.kr/detail/1001' and lk.get_attribute('target') == '_blank' and 'noopener' in lk.get_attribute('rel'))
+    check('kr sheet: 지도 보기 by place', pg.get_attribute('.sheet a#sheetMap', 'href') == 'https://map.naver.com/p/search/' + urllib.parse.quote('춘천미술관', safe=''))
+    check('kr sheet: image (http->https) shown', pg.locator('.sheet img.hero').count() == 1 and pg.get_attribute('.sheet img.hero', 'src') == 'https://cdn.example.kr/p/1001.jpg')
+    pg.wait_for_timeout(300); pg.screenshot(path=OUT + 'v31_kr_sheet.png')
+    pg.click('#sheetClose')
+    pg.click('[data-region="경상"]'); pg.click('[data-sec=culture] [data-open^="kc-"]'); pg.wait_for_selector('.sheet')
+    check('kr sheet without link: no 자세히 보기, 지도 보기 still there', pg.locator('.sheet a#sheetLink').count() == 0 and pg.locator('.sheet a#sheetMap').count() == 1)
+    pg.click('#sheetClose')
+    # 버킷·도장 (kc-)
+    pg.click('[data-region="강원"]'); kcid = pg.evaluate("()=>document.querySelector('[data-sec=culture] [data-open]').dataset.open")
+    pg.click('[data-sec=culture] [data-open^="kc-"]'); pg.wait_for_selector('.sheet'); pg.click('#sheetHeart'); pg.click('#sheetClose')
+    pg.click('[data-tab=bucket]')
+    check('kr bucket has kc- item', kcid == 'kc-1001' and pg.locator(f'#view [data-open="{kcid}"]').count() == 1)
+    pg.click(f'[data-done="{kcid}"]'); pg.wait_for_selector('#doneSave'); pg.fill('#memoIn', '좋았다'); pg.click('#doneSave'); pg.wait_for_selector(f'[data-undo="{kcid}"]')
+    pg.goto(url); pg.wait_for_selector('body[data-ready="1"]'); pg.click('[data-tab=bucket]')
+    check('kr bucket + stamp persist after reload', pg.locator(f'[data-undo="{kcid}"]').count() == 1 and pg.locator('#view .card').count() == 1)
+    stored = pg.evaluate("async()=>{const o=await new Promise(res=>{const q=indexedDB.open('cheolttara');q.onsuccess=()=>{const g=q.result.transaction('bucket').objectStore('bucket').getAll();g.onsuccess=()=>res(g.result)}});return o.find(x=>x.id.startsWith('kc-'))||null}")
+    check('kr bucket stores title/start/end/place/gu/sido', stored and stored.get('title') == '가을 사진전' and stored.get('start') == '2026-10-01' and stored.get('end') == '2026-12-31' and stored.get('place') == '춘천미술관' and stored.get('gu') == '춘천시' and stored.get('sido') == '강원', str(stored))
+    pg.click('[data-tab=stamps]'); vb = pg.locator('[data-visited-board]')
+    check('도장판 다녀온 곳 includes kc- item', vb.locator('.stamp.on').count() == 1 and '가을 사진전' in vb.inner_text() and '1곳' in vb.inner_text(), vb.inner_text().replace('\n', ' '))
+    pg.click('#makeCard'); pg.wait_for_selector('#cardOut[data-ready="1"]'); pg.click('#cardClose')
+    check('kr flow: no console errors', not errs, str(errs))
+    ctx.close()
+    # 담아둔 kc- 항목이 이후 데이터에서 빠져도(전국 파일이 비어도) 버킷에서 보인다
+    ctx, pg, errs, url = new_page(b, K, '2026-11-24'); pg.wait_for_selector('body[data-culture="1"]')
+    pg.click('[data-region="경상"]'); pg.click('[data-sec=culture] [data-open^="kc-"] >> nth=0')
+    pg.wait_for_selector('.sheet'); pg.click('#sheetHeart'); pg.click('#sheetClose')
+    pg.route('**/data/culture_kr.json', lambda route: route.fulfill(json={"updated": None, "source": "x", "items": []}))
+    pg.goto(url); pg.wait_for_selector('body[data-ready="1"]'); pg.click('[data-tab=bucket]')
+    check('kr bucket item survives an emptied kr file (title from saved bucket)', pg.locator('#view .card[data-open^="kc-"]').count() == 1 and '뮤지컬' in pg.inner_text('#view'), pg.inner_text('#view')[:80])
+    check('no console errors (kr bucket fallback)', not errs, str(errs))
+    ctx.close()
+    # 알림: kc- 항목도 같은 규칙 (시작 3일 전)
+    ctx, pg, errs, url = new_page(b, K, '2026-11-28')   # 청주 지역 행사(festival) 11/28 시작 -> 진행 중, 국악 한마당(kr) 12/01 = D-3
+    pg.wait_for_selector('body[data-culture="1"]')
+    pg.click('[data-month="1"]'); pg.locator('[data-sec=culture] .card-wrap:has([data-open^="kc-"])', has_text='국악 한마당').locator('[data-heart]').click()
+    pg.click('[data-tab=alerts]'); t = pg.locator('.alert.start').all_inner_texts()
+    check('kr item start alert (D-3)', len(t) == 1 and '국악 한마당' in t[0] and 'D-3' in t[0], str(t))
+    ctx.close()
+    # 전국 파일이 없거나 깨져도 서울 자료는 그대로
+    for label, handler in (('missing', lambda route: route.fulfill(status=404, body='no')), ('broken', lambda route: route.fulfill(status=200, content_type='application/json', body='{broken')),
+                           ('wrong shape', lambda route: route.fulfill(json={"items": "x"}))):
+        ctx = b.new_context(viewport={'width': 390, 'height': 844}, locale='ko-KR'); pg = ctx.new_page(); errs = []
+        pg.on('pageerror', lambda x, e=errs: e.append(str(x)))
+        pg.route('**/data/culture_kr.json', handler)
+        pg.goto(K + '?date=2026-11-24'); pg.wait_for_selector('body[data-ready="1"]'); pg.wait_for_selector('[data-sec=culture]'); pg.wait_for_timeout(300)
+        check(f'{label} kr file: seoul section intact, no page errors', pg.locator('[data-sec=culture] .card').count() == 8 and pg.locator('[data-open^="kc-"]').count() == 0 and not errs, str(errs))
+        ctx.close()
+    # 서울 파일이 비어 있고 전국만 있어도 동작 (라벨 전국)
+    ctx = b.new_context(viewport={'width': 390, 'height': 844}, locale='ko-KR'); pg = ctx.new_page(); errs = []
+    pg.on('pageerror', lambda x: errs.append(str(x))); pg.route('https://cdn.example.kr/**', image_route)
+    pg.route('**/data/culture_seoul.json', lambda route: route.fulfill(json=EMPTY_CULTURE))
+    pg.goto(K + '?date=2026-11-24'); pg.wait_for_selector('[data-sec=culture]')
+    check('kr only (seoul file empty): section works, label 전국', pg.inner_text('[data-sec=culture] h2 small') == '전국' and kr_row_ids(pg, 'culture') >= 1 and not errs, str(errs))
+    ctx.close()
+    # 전국 파일 늦게 도착: 첫 화면과 서울 섹션을 막지 않는다
+    ctx = b.new_context(viewport={'width': 390, 'height': 844}, locale='ko-KR'); pg = ctx.new_page(); errs = []; held = []
+    pg.on('pageerror', lambda x: errs.append(str(x))); pg.route('https://cdn.example.kr/**', image_route)
+    pg.route('**/data/culture_kr.json', lambda route: held.append(route))
+    pg.goto(K + '?date=2026-11-24'); pg.wait_for_selector('body[data-ready="1"]'); pg.wait_for_selector('[data-sec=culture] .card')
+    check('late kr file: first paint + seoul section not blocked', len(held) == 1 and pg.locator('[data-sec=fest] .card').count() > 0 and pg.locator('[data-open^="kc-"]').count() == 0)
+    held[0].continue_(); pg.wait_for_function("()=>document.querySelector('[data-sec=fest] [data-open^=\"kc-\"]')")
+    check('late kr file: merged in once it arrives, no errors', pg.locator('[data-sec=fest] [data-open^="kc-"]').count() == 1 and not errs, str(errs))
+    ctx.close()
+    # 빈 전국 파일 (C 사이트): 오류 없음, 서울 자료는 그대로
+    ctx, pg, errs, url = new_page(b, C, '2026-11-24'); pg.wait_for_selector('[data-sec=culture]'); pg.wait_for_timeout(300)
+    check('empty kr file: no console errors, seoul section intact, no kc- items', not errs and pg.locator('[data-sec=culture] .card').count() == 8 and pg.locator('[data-open^="kc-"]').count() == 0, str(errs))
+    ctx.close()
+
     # ============ 축제 알림 (시작 3일 전 / 종료 3일 전) ============
     ctx, pg, errs, url = new_page(b, A, '2026-11-26')   # 춘천 눈꽃(141002) 11/28 종료 → D-2
     pg.click('[data-heart="fest-141002"]'); pg.click('[data-tab=alerts]')
@@ -423,7 +560,7 @@ try:
     msg = pg.inner_text('[data-testid=festEmpty]')
     check('empty festivals → guidance message', '축제 일정은 보통 1~2달 전에 확정돼요' in msg, msg)
     check('empty festivals: other sections still render', pg.locator('[data-sec=food] .card').count() > 0 and pg.locator('[data-sec=place] .card').count() > 0)
-    check('empty festivals: footer', pg.inner_text('#festFoot') == '축제 아직 없음 · 공연·전시 아직 없음 · 자료: 한국관광공사, 서울특별시', pg.inner_text('#festFoot'))
+    check('empty festivals: footer', pg.inner_text('#festFoot') == '축제 아직 없음 · 서울 공연·전시 아직 없음 · 전국 공연·전시 아직 없음 · 자료: 한국관광공사, 서울특별시, 한국문화정보원', pg.inner_text('#festFoot'))
     pg.click('[data-month="11"]'); check('empty festivals: far month message', pg.locator('[data-testid=festEmpty]').count() == 1)
     pg.screenshot(path=OUT + 'v2_empty_festivals.png')
     check('no console errors (empty festivals)', not errs, str(errs))
@@ -481,9 +618,9 @@ try:
     pg.click('[data-tab=stamps]'); pg.click('#makeCard'); pg.wait_for_selector('#cardOut[data-ready="1"]'); pg.wait_for_timeout(300)
     pg.screenshot(path=OUT + 'photo_flow.png')
     pg.wait_for_timeout(1000); pg.reload(); pg.wait_for_timeout(1500)
-    keys = pg.evaluate("async()=>await caches.keys()"); check('service worker cache v4', keys == ['cheolttara-v4'], str(keys))
-    cached = pg.evaluate("async()=>(await (await caches.open('cheolttara-v4')).keys()).map(r=>new URL(r.url).pathname)")
-    check('SW precaches places + festivals + culture data', '/data/places.json' in cached and '/data/festivals.json' in cached and '/data/culture_seoul.json' in cached, str(cached))
+    keys = pg.evaluate("async()=>await caches.keys()"); check('service worker cache v5', keys == ['cheolttara-v5'], str(keys))
+    cached = pg.evaluate("async()=>(await (await caches.open('cheolttara-v5')).keys()).map(r=>new URL(r.url).pathname)")
+    check('SW precaches places + festivals + both culture files', '/data/places.json' in cached and '/data/festivals.json' in cached and '/data/culture_seoul.json' in cached and '/data/culture_kr.json' in cached, str(cached))
     check('SW never caches external images', all(not u.startswith('http') for u in cached) and not any('visitkorea' in u for u in cached))
     ctx.set_offline(True)
     try:
@@ -534,7 +671,9 @@ finally:
 with open(FEST_PATH, encoding='utf-8') as f:
     check('committed data/festivals.json untouched', f.read() == ORIGINAL_FEST)
 with open(CULT_PATH, encoding='utf-8') as f:
-    check('committed data/culture_seoul.json untouched and still the empty initial object', f.read() == ORIGINAL_CULT and json.loads(ORIGINAL_CULT) == EMPTY_CULTURE)
+    check('committed data/culture_seoul.json untouched', f.read() == ORIGINAL_CULT)
+with open(KR_PATH, encoding='utf-8') as f:
+    check('committed data/culture_kr.json untouched and still the empty initial object', f.read() == ORIGINAL_KR and json.loads(ORIGINAL_KR) == EMPTY_KR)
 fails = [r[0] for r in results if not r[1]]
 print(f'{len(results) - len(fails)}/{len(results)} passed')
 print('FAILS:', fails)

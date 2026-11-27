@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RESPONSE>
+ <HEADER><RESULTCODE>0000</RESULTCODE><RESULTMSG>OK</RESULTMSG></HEADER>
+ <BODY>
+  <ITEMS>
+   <ITEM><SEQ>9001</SEQ><TITLE>대문자 태그 전시</TITLE><STRTDATE>20261125</STRTDATE><ENDDATE>20261230</ENDDATE><PLACENAME>대구미술관</PLACENAME><REALMNAME>전시</REALMNAME><AREA>대구광역시</AREA><SIGUNGU>수성구</SIGUNGU><IMGURL>http://cdn.example.kr/p/9001.jpg</IMGURL><GPSX>128.6200</GPSX><GPSY>35.8300</GPSY><HOMEPAGE>http://www.example.kr/9001</HOMEPAGE></ITEM>
+   <item><Seq>9002</Seq><Title>Mixed Case Concert</Title><startdate>20261126</startdate><enddate>20261127</enddate><Place>울산문예회관</Place><RealmName>콘서트</RealmName><Area>울산</Area><Sigungu>남구</Sigungu><GpsX>129.3300</GpsX><GpsY>35.5400</GpsY></item>
+  </ITEMS>
+  <TotalCount>2</TotalCount>
+ </BODY>
+</RESPONSE>

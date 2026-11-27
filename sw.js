@@ -1,5 +1,5 @@
-const CACHE = 'cheolttara-v4';
-const FILES = ['./', 'index.html', 'styles.css', 'app.js', 'manifest.json', 'data/seasonal_items.json', 'data/places.json', 'data/festivals.json', 'data/culture_seoul.json',
+const CACHE = 'cheolttara-v5';
+const FILES = ['./', 'index.html', 'styles.css', 'app.js', 'manifest.json', 'data/seasonal_items.json', 'data/places.json', 'data/festivals.json', 'data/culture_seoul.json', 'data/culture_kr.json',
   'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png'];
 
 self.addEventListener('install', (e) => {
@@ -16,7 +16,7 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(req.url);
   if (url.origin !== location.origin) return;
   // 축제·공연 데이터는 매일 바뀌므로 네트워크 우선 (오프라인이면 캐시). 외부 이미지는 위에서 이미 제외됨.
-  if (url.pathname.endsWith('/data/festivals.json') || url.pathname.endsWith('/data/culture_seoul.json')) {
+  if (url.pathname.endsWith('/data/festivals.json') || url.pathname.endsWith('/data/culture_seoul.json') || url.pathname.endsWith('/data/culture_kr.json')) {
     e.respondWith(fetch(req).then((res) => {
       if (res && res.ok) { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)).catch(() => {}); }
       return res;

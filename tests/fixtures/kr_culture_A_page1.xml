@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response>
+ <header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header>
+ <body>
+  <items>
+   <item><seq>1001</seq><title>가을 사진전</title><startDate>20261001</startDate><endDate>20261231</endDate><place>춘천미술관</place><realmName>전시</realmName><area>강원특별자치도</area><sigungu>춘천시</sigungu><thumbnail>http://cdn.example.kr/p/1001.jpg</thumbnail><gpsX>127.7300</gpsX><gpsY>37.8800</gpsY><url>https://www.culture.go.kr/detail/1001</url></item>
+   <item><seq>1002</seq><title>뮤지컬 &lt;라이온&gt;</title><startDate>20261120</startDate><endDate>20261130</endDate><place>해운대문화회관</place><realmName>뮤지컬</realmName><area>부산</area><sigungu>해운대구</sigungu><thumbnail>https://cdn.example.kr/p/1002.jpg</thumbnail><gpsX>35.1600</gpsX><gpsY>129.1600</gpsY></item>
+   <item><seq>1003</seq><title>국악 한마당</title><startDate>20261201</startDate><endDate>20261201</endDate><place>광주문화예술회관</place><realmName>국악</realmName><area>전남광주통합특별시</area><sigungu>북구</sigungu><thumbnail/><gpsX>126.9100</gpsX><gpsY>35.1800</gpsY></item>
+   <item><seq>1004</seq><title>지난 가을 조각전</title><startDate>20260901</startDate><endDate>20261101</endDate><place>갤러리</place><realmName>전시</realmName><area>서울</area><sigungu>종로구</sigungu><thumbnail/><gpsX/><gpsY/></item>
+   <item><seq>1005</seq><title>상설전시 한국의 역사</title><startDate>20250101</startDate><endDate>20271231</endDate><place>박물관</place><realmName>전시</realmName><area>서울</area><sigungu>용산구</sigungu><thumbnail/><gpsX/><gpsY/></item>
+  </items>
+  <numOfrows>100</numOfrows><PageNo>1</PageNo><totalCount>13</totalCount>
+ </body>
+</response>

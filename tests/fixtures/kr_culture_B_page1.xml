@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response>
+ <header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header>
+ <body>
+  <items>
+   <item><seq>2001</seq><title>겨울 빛 축제</title><startDate>20261215</startDate><endDate>20270105</endDate><place>자라섬</place><realmName>축제</realmName><area>경기도</area><sigungu>가평군</sigungu><thumbnail/><gpsX>127.5200</gpsX><gpsY>37.8200</gpsY></item>
+   <item><seq>2002</seq><title>청주 지역 행사</title><startDate>20261128</startDate><endDate>20261129</endDate><place>청주 예술의전당</place><realmName>지역행사</realmName><area>충청북도</area><sigungu>청주시</sigungu><thumbnail/><gpsX>127.4900</gpsX><gpsY>36.6400</gpsY></item>
+   <item><seq>2003</seq><title>서울 빛초롱 축제</title><startDate>20261106</startDate><endDate>20261205</endDate><place>청계천</place><realmName>축제</realmName><area>서울</area><sigungu>종로구</sigungu><thumbnail/><gpsX/><gpsY/></item>
+  </items>
+  <numOfrows>100</numOfrows><PageNo>1</PageNo><totalCount>3</totalCount>
+ </body>
+</response>

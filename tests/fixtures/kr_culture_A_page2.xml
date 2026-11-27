@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response>
+ <header><resultCode>00</resultCode><resultMsg>NORMAL SERVICE.</resultMsg></header>
+ <body>
+  <items>
+   <item><seq>1006</seq><title>클래식 콘서트 &amp; 토크</title><startDate>2026-12-05</startDate><endDate>2026-12-06</endDate><place>세종문화회관</place><realmName>음악</realmName><area>서울특별시</area><sigungu>종로구</sigungu><thumbnail/><gpsX>126.9754</gpsX><gpsY>37.5726</gpsY></item>
+   <item><seq>1001</seq><title>가을 사진전 (중복)</title><startDate>20261001</startDate><endDate>20261231</endDate><place>춘천미술관</place><realmName>전시</realmName><area>강원특별자치도</area><sigungu>춘천시</sigungu><thumbnail/><gpsX/><gpsY/></item>
+   <item><seq>1008</seq><title/><startDate>20261201</startDate><endDate>20261202</endDate><place/><realmName>연극</realmName><area>서울</area><sigungu>중구</sigungu><thumbnail/><gpsX/><gpsY/></item>
+   <item><seq>1009</seq><title>시작일 없는 공연</title><startDate/><endDate>20261202</endDate><place/><realmName>연극</realmName><area>서울</area><sigungu>중구</sigungu><thumbnail/><gpsX/><gpsY/></item>
+   <item><seq>1010</seq><title>먼 미래 연극</title><startDate>20270601</startDate><endDate>20270630</endDate><place/><realmName>연극</realmName><area>서울</area><sigungu>중구</sigungu><thumbnail/><gpsX/><gpsY/></item>
+   <item><seq>1011</seq><title>마지막 날 연극</title><startDate>20261124</startDate><endDate>20261124</endDate><place>수원문화재단</place><realmName>연극</realmName><area>경기도</area><sigungu>수원시</sigungu><thumbnail/><gpsX>127.0100</gpsX><gpsY>37.2600</gpsY></item>
+   <item><seq/><title>일련번호 없는 무용</title><startDate>20261210</startDate><endDate>20261212</endDate><place>제주아트센터</place><realmName>무용</realmName><area>제주특별자치도</area><sigungu>제주시</sigungu><thumbnail/><gpsX>126.5300</gpsX><gpsY>33.5000</gpsY></item>
+   <item><seq>1012</seq><title>가을 서울 사진전</title><startDate>20261020</startDate><endDate>20261220</endDate><place>서울시립미술관</place><realmName>전시</realmName><area>서울특별시</area><sigungu>중구</sigungu><thumbnail/><gpsX/><gpsY/></item>
+  </items>
+  <numOfrows>100</numOfrows><PageNo>2</PageNo><totalCount>13</totalCount>
+ </body>
+</response>
