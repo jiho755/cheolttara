@@ -293,7 +293,7 @@ class LiveLogicTests(Base):
         fc.http_get = fake
         rc, out, err = run('--today', TODAY, '--out', self.out)
         self.assertEqual(rc, 1)
-        self.assertEqual(state['n'], 2)
+        self.assertEqual(state['n'], fc.RETRIES + 1)
         self.assertNotIn(KEY, out + err)                      # 출력에는 나오지 않아야 한다
         with open(self.out, encoding='utf-8') as f:
             self.assertEqual(f.read(), 'KEEP')

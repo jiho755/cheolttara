@@ -25,8 +25,8 @@ SOURCE = '서울특별시 문화행사 정보 (공공누리 제1유형)'
 KST = timezone(timedelta(hours=9))
 ROWS = 1000
 TIMEOUT = 30
-RETRIES = 1          # 쪽마다 실패 시 재시도 횟수
-RETRY_DELAY = 2      # 초
+RETRIES = 3          # 쪽마다 실패 시 재시도 횟수 (서울시 서버가 해외 접속 시 가끔 시간 초과)
+RETRY_DELAY = 10     # 초 (재시도마다 RETRY_DELAY * 시도 횟수만큼 대기)
 MAX_PAGES = 60
 KEEP_AHEAD_DAYS = 120
 MAX_SPAN_DAYS = 365
@@ -207,7 +207,7 @@ def fetch_live_page(key, page):
             err = '%s: request failed' % type(e).__name__
         if attempt < RETRIES:
             print('page %d failed (%s), retrying' % (page, err), file=sys.stderr)
-            time.sleep(RETRY_DELAY)
+            time.sleep(RETRY_DELAY * (attempt + 1))
     raise FetchError('page %d failed: %s' % (page, err))
 
 
