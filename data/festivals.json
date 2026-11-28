@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T15:36:16+09:00",
+ "updated": "2026-11-28T10:14:59+09:00",
  "source": "한국관광공사 TourAPI",
  "items": [
   {"id": "3481597", "title": "페인터즈", "start": "2022-11-01", "end": "2026-12-31", "addr": "서울특별시 중구 정동길 3 (정동) 경향신문사 1층", "sido": "서울", "image": "https://tong.visitkorea.or.kr/cms/resource/01/4060301_image2_1.png", "tel": "02-766-7848", "mapx": 126.969976113229, "mapy": 37.5681732680976},
@@ -34,6 +34,7 @@
   {"id": "3396705", "title": "울산문화박람회", "start": "2026-11-26", "end": "2026-11-29", "addr": "울산광역시 울주군 삼남읍 울산역로 255", "sido": "울산", "image": "https://tong.visitkorea.or.kr/cms/resource/24/4144124_image2_1.jpg", "tel": "052-255-1946", "mapx": 129.1316552505, "mapy": 35.5556181512},
   {"id": "3437916", "title": "크리스마스 빌리지 부산 2026", "start": "2026-11-26", "end": "2026-12-25", "addr": "부산광역시 해운대구 수영강변대로 120 (우동)", "sido": "부산", "image": "https://tong.visitkorea.or.kr/cms/resource/49/4130849_image2_1.png", "tel": "070-4680-1718", "mapx": 129.1270422473, "mapy": 35.1709631305},
   {"id": "4111479", "title": "제3회 추도 섬 영화제", "start": "2026-11-27", "end": "2026-11-29", "addr": "경상남도 통영시 산양읍", "sido": "경남", "image": "https://tong.visitkorea.or.kr/cms/resource/10/4163310_image2_1.png", "tel": "051-790-9433", "mapx": 128.2954572699, "mapy": 34.7561870967},
+  {"id": "4179229", "title": "거제 K-푸드로드 92데이", "start": "2026-11-27", "end": "2026-11-29", "addr": "경상남도 거제시 옥포로6길 16 (옥포동) 옥포 삼겹살 거리", "sido": "경남", "image": "https://tong.visitkorea.or.kr/cms/resource/39/4179239_image2_1.png", "tel": "0507-1312-9577", "mapx": 128.6953285292, "mapy": 34.8907759762},
   {"id": "3578130", "title": "울산 크리스마스 마켓", "start": "2026-11-27", "end": "2026-12-26", "addr": "울산광역시 남구 대공원로 94 (옥동)", "sido": "울산", "image": "https://tong.visitkorea.or.kr/cms/resource/40/4153340_image2_1.jpg", "tel": "052-271-8701", "mapx": 129.2935190325, "mapy": 35.5316566254},
   {"id": "2048902", "title": "해운대 빛축제", "start": "2026-11-28", "end": "2027-01-10", "addr": "부산광역시 해운대구 중동 1411-14 구남로, 해운대해수욕장 일원", "sido": "부산", "image": "https://tong.visitkorea.or.kr/cms/resource/41/4155841_image2_1.jpg", "tel": "051-749-4062", "mapx": 129.1615365475, "mapy": 35.1592056511},
   {"id": "3545306", "title": "포천펫스타", "start": "2026-11-29", "end": "2026-11-29", "addr": "경기도 포천시 신북면 아트밸리로 234 포천 아트밸리", "sido": "경기", "image": "https://tong.visitkorea.or.kr/cms/resource/07/4133507_image2_1.jpg", "tel": "0502-1949-0514", "mapx": 127.236500949, "mapy": 37.9234466507},
